@@ -1,0 +1,29 @@
+.name{
+    float: right;
+    margin-top: 15px;
+    color: #90c43e;
+}
+
+.weblogo{
+	width: 100px;
+	/* font-family: 'Lato', sans-serif; */
+}
+.nav-link{
+    color: #90c43e;
+}
+.nav-social{
+	margin-top: 5px;
+    margin-left: 400px;
+    font-size: 20px;
+    /* color: #ff1616; */
+    text-decoration: none;
+}
+.nav-social a{
+	text-decoration: none;
+	color: #90c43e;
+}
+
+.bgfooter{
+    /* background-color: #74ac3a; */
+    background: url("../assets/images/home/banners/footer_top.png");
+}

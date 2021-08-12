@@ -1,0 +1,140 @@
+
+<br><br>
+<!-- Accordion -->
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Claim Details
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="overflow: auto;">
+                    <table class="table table-primary">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Claim Id</th>
+                                <th>Policy No</th>
+                                <th>Insc. Company</th>
+                                <th>Insurer Name</th>
+                                <th>Date Of Loss</th>
+                                <th>Cause Of Loss</th>
+                                <th>Sum Insured</th>
+                                <th>Claim Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let claim of service.claimlist">
+                                <td>{{claim.claimId}}</td>
+                                <td>{{claim.policyNo}}</td>
+                                <td>{{claim.icompany}}</td>
+                                <td>{{claim.insuranceName}}</td>
+                                <td>{{claim.dateOfLoss}}</td>
+                                <td>{{claim.causeOfLoss}}</td>
+                                <td>{{claim.sumInsured}}</td>
+                                <td>{{claim.claimStatus}}</td>
+                                <td>
+                                    <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(claim.claimId)" ></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(claim)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Add/Update Claim Details
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <form  #form="ngForm" >
+                        <input type="hidden" name="claimId" [value]="service.formData.claimId">
+                        
+                        
+                        <div class="form-group">
+                            <label>Policy No</label>
+                            <input class="form-control" placeholder="Enter Policy Noumber"
+                             name="policyNo" #policyNo="ngModel" [(ngModel)]="service.formData.policyNo"
+                             required [class.invalid]="policyNo.invalid && policyNo.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Insurance Company</label>
+                            <input class="form-control" placeholder="Enter Insurance Company Name" 
+                            name="icompany" #icompany="ngModel" [(ngModel)]="service.formData.icompany"
+                            required [class.invalid]="icompany.invalid && icompany.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Insurer Name</label>
+                            <input class="form-control" placeholder="Enter Insurer Name" 
+                            name="insuranceName" #insuranceName="ngModel" [(ngModel)]="service.formData.insuranceName"
+                            required [class.invalid]="insuranceName.invalid && insuranceName.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Date of Loss</label>
+                            <input class="form-control" placeholder="Enter Date of Loss" 
+                            name="dateOfLoss" #dateOfLoss="ngModel" [(ngModel)]="service.formData.dateOfLoss"
+                            required [class.invalid]="dateOfLoss.invalid && dateOfLoss.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Cause of Loss</label>
+                            <input type="string" class="form-control" placeholder="Enter Cause of Loss" 
+                            name="causeOfLoss" #causeOfLoss="ngModel" [(ngModel)]="service.formData.causeOfLoss"
+                            required  [class.invalid]="causeOfLoss.invalid && causeOfLoss.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Sum Insured</label>
+                            <input class="form-control" placeholder="Enter Sum Insured" 
+                            name="sumInsured" #sumInsured="ngModel" [(ngModel)]="service.formData.sumInsured"
+                            required [class.invalid]="sumInsured.invalid && sumInsured.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Claim Status</label>
+                            <input class="form-control" placeholder="Enter Claim Status" 
+                            name="claimStatus" #claimStatus="ngModel" [(ngModel)]="service.formData.claimStatus"
+                            required [class.invalid]="claimStatus.invalid && claimStatus.touched">
+                        </div>
+                    
+                        <br><br>
+                        <div class="form-group">
+                            <button class="btn btn-info btn-block"(click)="addRecord(form)" [disabled]="form.invalid">ADD</button>&nbsp;&nbsp;
+                            <button class="btn btn-info btn-block" (click)="updateRecord(form)" >Update</button>
+                        </div>
+            
+                    </form>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div> -->
+          </div>
+    </div>
+</div>
+
+

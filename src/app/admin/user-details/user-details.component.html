@@ -1,0 +1,188 @@
+
+<br>
+<br>
+
+<div class="container" style="overflow: auto;">
+   
+
+</div>
+
+<div class="container">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Users Details
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body"style="overflow: auto;">
+                <table class="table table-primary">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>UserId Id</th>
+                            <th>FirstName Id</th>
+                            <th>LastName Id</th>
+                            <th>Email</th>
+                            <th>Address1</th>
+                            <th>Address2</th>
+                            <th>City</th>
+                            <th>State </th>
+                            <th>Pincode</th>
+                            <th>AadharCard</th>
+                            <th>PanCard</th>
+                            <th>Certificate</th>
+                            <th>TraderLicense</th>
+                            <th>Password</th>
+                            <th>VerificationStatus</th>
+                            <th>ApprovedBy</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of service.userlist">
+                            <td>{{u.userId}}</td>
+                            <td>{{u.firstName}}</td>
+                            <td>{{u.lastName}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.address1}}</td>
+                            <td>{{u.address2}}</td>
+                            <td>{{u.city}}</td>
+                            <td>{{u.state}}</td>
+                            <td>{{u.pincode}}</td>
+                            <td>{{u.aadharCard}}</td>
+                            <td>{{u.panCard}}</td>
+                            <td>{{u.certificate}}</td>
+                            <td>{{u.traderLicense}}</td>
+                            <td>{{u.password}}</td>
+                            <td>{{u.verificationStatus}}</td>
+                            <td>{{u.approvedBy}}</td>
+                            
+                            <!-- <td><p class="box-title" style="margin-top:2px; margin-left:5px;" id="editable">{{b.approvalStatus}}</p></td>
+                            <input type="text"  id="inputgroupname" style="display:none;"> -->
+                            <td>
+                                <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(u.userId)" ></i>
+                            </td>
+                            <td>
+                                <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(u)"></i>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Add/Update Users Details
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <form #form="ngForm">
+                    <input type="hidden" name="userId" [value]="service.formData.userId">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input class="form-control" placeholder="Enter First Name"
+                         name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName">
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input class="form-control" placeholder="Enter Last Name"
+                         name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName">
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" placeholder="Enter Email "
+                         name="email" #email="ngModel" [(ngModel)]="service.formData.email">
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label>Address 1</label>
+                        <input class="form-control" placeholder="Enter Address 1"
+                         name="address1" #address1="ngModel" [(ngModel)]="service.formData.address1">
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label>Address 2</label>
+                        <input class="form-control" placeholder="Enter Address 2"
+                         name="address2" #address2="ngModel" [(ngModel)]="service.formData.address2">
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label>City</label>
+                        <input class="form-control" placeholder="Enter City"
+                         name="city" #city="ngModel" [(ngModel)]="service.formData.city">
+                    </div>
+                
+                
+                    <div class="form-group">
+                        <label>State</label>
+                        <input class="form-control" placeholder="Enter Date Bid"
+                         name="state" #state="ngModel" [(ngModel)]="service.formData.state">
+                    </div>
+                    <div class="form-group">
+                        <label>Pincode</label>
+                        <input class="form-control" placeholder="Enter Pincode"
+                         name="pincode" #pincode="ngModel" [(ngModel)]="service.formData.pincode">
+                    </div>
+                    <div class="form-group">
+                        <label>Aadhar Card</label>
+                        <input class="form-control" placeholder="Enter Aadhar Card"
+                         name="aadharCard" #aadharCard="ngModel" [(ngModel)]="service.formData.aadharCard">
+                    </div>
+                    <div class="form-group">
+                        <label>panCard</label>
+                        <input class="form-control" placeholder="Enter panCard"
+                         name="panCard" #panCard="ngModel" [(ngModel)]="service.formData.panCard">
+                    </div>
+                    <div class="form-group">
+                        <label>certificate</label>
+                        <input class="form-control" placeholder="Enter certificate"
+                         name="certificate" #certificate="ngModel" [(ngModel)]="service.formData.certificate">
+                    </div>
+                    <div class="form-group">
+                        <label>traderLicense</label>
+                        <input class="form-control" placeholder="Enter traderLicense"
+                         name="traderLicense" #traderLicense="ngModel" [(ngModel)]="service.formData.traderLicense">
+                    </div>
+                    <div class="form-group">
+                        <label>password</label>
+                        <input class="form-control" placeholder="Enter password"
+                         name="password" #password="ngModel" [(ngModel)]="service.formData.password">
+                    </div>
+                    <div class="form-group">
+                        <label>verificationStatus</label>
+                        <input class="form-control" placeholder="Enter verificationStatus"
+                         name="verificationStatus" #verificationStatus="ngModel" [(ngModel)]="service.formData.verificationStatus">
+                    </div>
+                    <div class="form-group">
+                        <label>approvedBy</label>
+                        <input class="form-control" placeholder="Enter approvedBy"
+                         name="approvedBy" #approvedBy="ngModel" [(ngModel)]="service.formData.approvedBy">
+                    </div>
+                
+                    <br>
+                    
+                
+                    <div class="form-group">
+                        <button class="btn btn-info btn-block"(click)="addRecord(form)" [disabled]="form.invalid">ADD</button>&nbsp;&nbsp;
+                        <button class="btn btn-info btn-block" (click)="updateRecord(form)">Update</button>
+                    </div>
+                
+                
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

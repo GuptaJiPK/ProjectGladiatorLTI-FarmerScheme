@@ -1,0 +1,191 @@
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+<div class="container" id="context" style="padding:50px 100px;">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">FarmersPortal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav> -->
+
+ <div class="container align-center py-3 border"style="background-image: url(assets/images/home/banners/bg-shop.jpg)">
+  <div style="height: 45px;">
+    <a routerLink='/newuser' class="btn btn-dark" style="float: right;"><i class="fa fa-chevron-left" aria-hidden="true"></i> Go Back</a>
+
+  </div>
+
+    <form [formGroup]="registrationForm">
+        <h4 style="text-align:center;">Bidder's Personal Details</h4>
+          <div>
+            <p>
+                <label>FullName</label>
+                 <input type="text" formControlName="fullname">
+             </p>
+             <div *ngIf="!registrationForm.get('fullname')?.valid && registrationForm.get('fullname')?.touched" 
+             class="text-danger"> Full Name is required</div>
+             <p>
+              <label>Contact No</label>
+              <input type="number" formControlName="Contact">
+          </p>
+          <div *ngIf="!registrationForm.get('Contact')?.valid && registrationForm.get('Contact')?.touched" 
+          class="text-danger"> Contact is required</div>
+          
+             <p>
+                 <label>E-mail Id</label>
+                 <input type="text" formControlName="mailid">
+             </p>
+             <div *ngIf="!registrationForm.get('mailid')?.valid && (registrationForm.get('mailid')?.dirty || registrationForm.get('mailid')?.touched)"
+    class = "error">
+
+        <div *ngIf="registrationForm.get('mailid')?.errors?.required">
+        <small class="text-danger">Email is required </small>
+        </div>
+
+        <div *ngIf="registrationForm.get('mailid')?.errors?.email">
+        <small class="text-danger">Invalid email address</small>
+        </div>
+`   </div>
+          </div>  
+          <div>
+              <h4 style="text-align:center;">Address Details</h4>
+              <p>
+                <label>Address 1</label>
+                <textarea rows="4" cols="50" formControlName="Address1" placeholder="Please Enter your primary Address"></textarea>
+
+              </p>
+              <div *ngIf="!registrationForm.get('Address1')?.valid && registrationForm.get('Address1')?.touched" 
+             class="text-danger"> Address1 is required</div>
+              <p>
+                <label>Address 2</label>
+                <textarea rows="4" cols="50" formControlName="Address2" placeholder="Please Enter your secondary Address"></textarea>
+
+              </p>
+              <div *ngIf="!registrationForm.get('Address2')?.valid && registrationForm.get('Address2')?.touched" 
+             class="text-danger"> Address2 is required</div>
+          </div>
+          <div>
+            <p>
+                <label>City</label>
+                 <input type="text" formControlName="city">
+             </p>
+             <div *ngIf="!registrationForm.get('city')?.valid && registrationForm.get('city')?.touched" 
+             class="text-danger"> City is required</div>
+             <p>
+                 <label>State</label>
+                 <input type="text" formControlName="state">
+             </p>
+             <div *ngIf="!registrationForm.get('state')?.valid && registrationForm.get('state')?.touched" 
+             class="text-danger"> State is required</div>
+             <p>
+                 <label>Pin Code</label>
+                 <input type="number" formControlName="pin">
+             </p>
+             <div *ngIf="!registrationForm.get('pin')?.valid && registrationForm.get('pin')?.touched" 
+             class="text-danger"> Pin Code is required</div>
+          </div> 
+
+          <div>
+              <h4 style="text-align:center;">Bank Details</h4>
+              <p>
+                <label>Account No</label>
+                 <input type="text" formControlName="acc">
+             </p>
+             <div *ngIf="!registrationForm.get('acc')?.valid && registrationForm.get('acc')?.touched" 
+             class="text-danger">Account No is required</div>
+             <p>
+                 <label>IFSC COde</label>
+                 <input type="text" formControlName="ifsc">
+             </p>
+             <div *ngIf="!registrationForm.get('ifsc')?.valid && registrationForm.get('ifsc')?.touched" 
+             class="text-danger"> IFSC is required</div>
+
+          </div>
+          <div>
+            <h4 style="text-align:center;">Documents Upload</h4>
+          <p>
+              <label>Aadhar</label>
+               <input type="file" formControlName="aadhar">
+           </p>
+           <p>
+               <label>PanCard</label>
+               <input type="file" formControlName="pan">
+           </p>
+           <p>
+               <label>Traders License</label>
+               <input type="file" formControlName="trade">
+           </p>
+
+        </div>
+
+        <div>
+            <p>
+                <label>Password</label>
+                <input type="password" formControlName="pwd">
+            </p>
+            <div *ngIf="!registrationForm.get('pwd')?.valid && registrationForm.get('pwd')?.touched"class="alert alert-danger">
+
+            <div *ngIf="registrationForm.get('pwd')?.errors?.required">
+            Password is required
+            </div>
+
+            <div *ngIf="registrationForm.get('pwd')?.errors?.pattern"> 
+                Password should contain one uppercase letter, one lowercase letter and one number 
+                <br>Password should be 8 to 12 characters in length
+            </div>
+
+        </div>
+
+            <p>
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmpassword">
+            </p>
+
+        </div>
+            <div *ngIf="!registrationForm.get('confirmpassword')?.valid && registrationForm.get('confirmpassword')?.touched" class="alert alert-danger">
+
+            <div *ngIf="registrationForm.get('confirmpassword')?.errors?.required">
+                Confirm Password is required
+            </div>
+
+            <div *ngIf="registrationForm.get('confirmpassword')?.errors?.pattern"> 
+                    Password should contain one uppercase letter, one lowercase letter and one number 
+                    <br>Password should be 8 to 12 characters in length
+            </div>
+        </div>
+        
+        
+        <button class="btn btn-success" type="submit">Register</button>
+        <button class="btn btn-success" type="button">Reset</button>
+        
+          
+        </form>
+        
+</div>
+         
+</div>
+    

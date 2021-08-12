@@ -1,0 +1,160 @@
+<br><br>
+<!-- Accordion -->
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Crop Details
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="overflow: auto;">
+                    <table class="table table-primary">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Crop Id</th>
+                                <th>User Id</th>
+                                <th>Crop Type</th>
+                                <th>Crop Name</th>
+                                <th>Quantity</th>
+                                <th>Soil Ph</th>
+                                <th>Date Of Sell</th>
+                                <th>MSP</th>
+                                <th>Sold Price</th>
+                                <th>Total Price</th>
+                                <th>Status Of Crop Sell</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of service.croplist">
+                                <td>{{c.cropId}}</td>
+                                <td>{{c.userId}}</td>
+                                <td>{{c.cropType}}</td>
+                                <td>{{c.cropName}}</td>
+                                <td>{{c.quantity}}</td>
+                                <td>{{c.soilPh}}</td>
+                                <td>{{c.dateOfSoldCrop}}</td>
+                                <td>{{c.msp}}</td>
+                                <td>{{c.soldPrice}}</td>
+                                <td>{{c.totalPrice}}</td>
+                                <td>{{c.statusOfCropSell}}</td>
+                                <td>
+                                    <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(c.cropId)" ></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(c)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Add/Update Crop Details
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <form  #form="ngForm" >
+                        <input type="hidden" name="cropId" [value]="service.formData.cropId">
+                        <div class="form-group">
+                            <label>UserId</label>
+                            <input class="form-control" placeholder="Enter User Id"
+                             name="userId" #userId="ngModel" [(ngModel)]="service.formData.userId">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Crop Type</label>
+                            <input class="form-control" placeholder="Enter Crop Type"
+                             name="cropType" #cropType="ngModel" [(ngModel)]="service.formData.cropType"
+                             required [class.invalid]="cropType.invalid && cropType.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Crop Name</label>
+                            <input class="form-control" placeholder="Enter Crop Name" 
+                            name="cropName" #cropName="ngModel" [(ngModel)]="service.formData.cropName"
+                            required [class.invalid]="cropName.invalid && cropName.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input class="form-control" placeholder="Enter Quantity" 
+                            name="quantity" #quantity="ngModel" [(ngModel)]="service.formData.quantity"
+                            required [class.invalid]="quantity.invalid && quantity.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Soil Ph</label>
+                            <input class="form-control" placeholder="Enter Soil Ph" 
+                            name="soilPh" #soilPh="ngModel" [(ngModel)]="service.formData.soilPh"
+                            required [class.invalid]="soilPh.invalid && soilPh.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Date of Sold Crop</label>
+                            <input type="string" class="form-control" placeholder="Enter Date of Sold Crop" 
+                            name="dateOfSoldCrop" #dateOfSoldCrop="ngModel" [(ngModel)]="service.formData.dateOfSoldCrop"
+                              [class.invalid]="dateOfSoldCrop.invalid && dateOfSoldCrop.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>MSP</label>
+                            <input class="form-control" placeholder="Enter msp" 
+                            name="msp" #msp="ngModel" [(ngModel)]="service.formData.msp"
+                            required [class.invalid]="msp.invalid && msp.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Sold Price</label>
+                            <input class="form-control" placeholder="Enter soldPrice" 
+                            name="soldPrice" #soldPrice="ngModel" [(ngModel)]="service.formData.soldPrice"
+                            required [class.invalid]="soldPrice.invalid && soldPrice.touched">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>TotalPrice</label>
+                            <input class="form-control" placeholder="Enter totalPrice" 
+                            name="totalPrice" #totalPrice="ngModel" [(ngModel)]="service.formData.totalPrice"
+                            required [class.invalid]="totalPrice.invalid && totalPrice.touched">
+                        </div>
+                    
+                    
+                        <div class="form-group">
+                            <label>StatusOfCropSell</label>
+                            <input class="form-control" placeholder="Enter statusOfCropSell" 
+                            name="statusOfCropSell" #statusOfCropSell="ngModel" [(ngModel)]="service.formData.statusOfCropSell">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-info btn-block"(click)="addRecord(form)" [disabled]="form.invalid">ADD</button>
+                            <button class="btn btn-info btn-block" (click)="updateRecord(form)" >Update</button>
+                        </div>
+            
+                    </form>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div> -->
+          </div>
+    </div>
+</div>
+
+
