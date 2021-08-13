@@ -1,0 +1,26 @@
+
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            
+            <th>Sold Price</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let c of crops">
+        <tr>
+            <td>{{c.cropId}}</td>
+            <td>{{c.cropName}}</td>
+            <td>{{c.cropType}}</td>
+            <td>{{c.soldPrice}}</td>
+            
+            
+        </tr>
+  
+    </tbody>
+  </table>
+
+  

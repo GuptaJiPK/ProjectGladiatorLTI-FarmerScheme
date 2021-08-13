@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormGroup, Validators,FormBuilder } from '@angular/forms';
-import { ClaimInsurance } from 'src/Models/ClaimInsurance';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IClaimService } from 'src/Service/iclaim';
-
 @Component({
-  selector: 'app-claiminsurance',
-  templateUrl: './claiminsurance.component.html',
-  styleUrls: ['./claiminsurance.component.css']
+  selector: 'app-claim-insurance',
+  templateUrl: './claim-insurance.component.html',
+  styleUrls: ['./claim-insurance.component.css']
 })
-export class ClaiminsuranceComponent implements OnInit {
+export class ClaimInsuranceComponent implements OnInit {
 
   claimform:FormGroup;
   constructor(private iclaimservice:IClaimService) {
@@ -23,7 +21,6 @@ export class ClaiminsuranceComponent implements OnInit {
       }
     )
    }
-
 
   ngOnInit(): void {
     this.futureDateDisable();
@@ -59,4 +56,5 @@ export class ClaiminsuranceComponent implements OnInit {
     });
   }
   
+
 }

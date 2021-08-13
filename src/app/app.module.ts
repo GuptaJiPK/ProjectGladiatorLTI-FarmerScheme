@@ -18,20 +18,25 @@ import { CropDetailsComponent } from './admin/crop-details/crop-details.componen
 import { BidderDetailsComponent } from './admin/bidder-details/bidder-details.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
 import { ClaimDetailsComponent } from './admin/claim-details/claim-details.component';
-import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.component';
-import { ApplyinsuranceComponent } from './applyinsurance/applyinsurance.component';
+
+
 import { InsuranceService } from 'src/Service/InsuranceService';
 import { BiddermainpageComponent } from './biddermainpage/biddermainpage.component';
 import { BidderCropService } from 'src/Service/BidderCropService';
 import { ClaimService } from 'src/Service/claimService';
 import { BidhistoryComponent } from './bidhistory/bidhistory.component';
-import { ViewsoldhistoryComponent } from './viewsoldhistory/viewsoldhistory.component';
-import { ViewmarketplacehomeComponent } from './viewmarketplacehome/viewmarketplacehome.component';
+
+
 import { UploadComponent } from './upload/upload.component';
-import { CropComponent } from './crop/crop.component';
 import { FarmerwelcomeComponent } from './farmerwelcome/farmerwelcome.component';
 import { CropService } from 'src/Service/cropService';
 import { BidcomponentComponent } from './bidcomponent/bidcomponent.component';
+import { PlaceSellRequestComponent } from './farmer/place-sell-request/place-sell-request.component';
+import { ViewMarketPlaceComponent } from './farmer/view-market-place/view-market-place.component';
+import { SoldCropHistoryComponent } from './farmer/sold-crop-history/sold-crop-history.component';
+import { InsuranceComponent } from './farmer/insurance/insurance.component';
+import { ApplyInsuranceComponent } from './farmer/insurance/apply-insurance/apply-insurance.component';
+import { ClaimInsuranceComponent } from './farmer/insurance/claim-insurance/claim-insurance.component';
 
 
 
@@ -54,16 +59,17 @@ import { BidcomponentComponent } from './bidcomponent/bidcomponent.component';
     BidderDetailsComponent,
     UserDetailsComponent,
     ClaimDetailsComponent,
-    ClaiminsuranceComponent,
-    ApplyinsuranceComponent,
     BiddermainpageComponent,
     BidhistoryComponent,
-    ViewsoldhistoryComponent,
-    ViewmarketplacehomeComponent,
     UploadComponent,
-    CropComponent,
     FarmerwelcomeComponent,
     BidcomponentComponent,
+    PlaceSellRequestComponent,
+    ViewMarketPlaceComponent,
+    SoldCropHistoryComponent,
+    InsuranceComponent,
+    ApplyInsuranceComponent,
+    ClaimInsuranceComponent,
   
   ],
   imports: [

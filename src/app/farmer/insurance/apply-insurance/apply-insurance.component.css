@@ -123,17 +123,17 @@ span{
     margin-bottom: 10px;
     border-radius: 5px;
     background-color:none;
-    /* border-color:green; */
+    
     border:1px solid green ;
     transition: 180ms box-shadow ease-in-out;
     width: 100%;
     
 }
 .card {
-    margin-left: 340px;
+    
     width: 800px;
     padding: 30px 40px;
-    margin-top: 60px;
+   
     margin-bottom: 60px;
     border: none !important;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CropComponent } from './crop.component';
+import { ApplyInsuranceComponent } from './apply-insurance.component';
 
-describe('CropComponent', () => {
-  let component: CropComponent;
-  let fixture: ComponentFixture<CropComponent>;
+describe('ApplyInsuranceComponent', () => {
+  let component: ApplyInsuranceComponent;
+  let fixture: ComponentFixture<ApplyInsuranceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CropComponent ]
+      declarations: [ ApplyInsuranceComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CropComponent);
+    fixture = TestBed.createComponent(ApplyInsuranceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

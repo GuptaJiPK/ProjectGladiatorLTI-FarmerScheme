@@ -1,32 +1,24 @@
-
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpEventType, HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Crop } from 'src/Models/Crop';
 import { CropService } from 'src/Service/cropcrud/crop.service';
-import { FormBuilder, FormGroup, FormControl, FormArray, Validators, AbstractControl} from '@angular/forms';
-//import { FileUploader } from 'ng2-file-upload';
 
 @Component({
-  selector: 'app-crop',
-  templateUrl: './crop.component.html',
-  styleUrls: ['./crop.component.css']
-})  
-export class CropComponent implements OnInit {
-  // uploader: FileUploader = new FileUploader({ url: "http://localhost:5000/api/CropForSalesVer3", removeAfterUpload: false, autoUpload: true });
-  // fileToUpload: File | any;
-
+  selector: 'app-place-sell-request',
+  templateUrl: './place-sell-request.component.html',
+  styleUrls: ['./place-sell-request.component.css']
+})
+export class PlaceSellRequestComponent implements OnInit {
 
   public progress?: number;
   public messageupload?: string;
   @Output() public onUploadFinished = new EventEmitter();
-
-
-
+  
   cropForm:any;
-  constructor(private fb:FormBuilder,private cropservice:CropService,private router:Router,private http: HttpClient) 
-  {
+
+  constructor(private fb:FormBuilder,public cropservice:CropService,private router:Router,private http: HttpClient) { 
     this.crop=new Crop();
     this.cropForm=this.fb.group({
       cropType: ['', [Validators.required]],
@@ -36,8 +28,8 @@ export class CropComponent implements OnInit {
       Quantity: ['', [Validators.required]],   
       SoilPh: ['', [Validators.required]] 
     },{validator: this.passwordConfirming});
-   }
-   passwordConfirming(c: AbstractControl) {
+  }
+  passwordConfirming(c: AbstractControl) {
     if (c.get('pwd')?.value !== c.get('confirmpassword')?.value) {
         //return {invalid: true};
     }
@@ -46,12 +38,6 @@ export class CropComponent implements OnInit {
   ngOnInit(): void {
     this.fetchcrop();
   }
-  // onUpload(event: any){​​​​​
-  //   this.fileToUpload = event.target.files[0];  
-  //   var reader = new FileReader();  
-  //   reader.readAsDataURL(this.fileToUpload); 
-  // }
-
   errmsg:any;
 
   cropdetails:Crop={};
@@ -157,7 +143,5 @@ updateCrop()
         }
       });
   }
+
 }
-
- 
-

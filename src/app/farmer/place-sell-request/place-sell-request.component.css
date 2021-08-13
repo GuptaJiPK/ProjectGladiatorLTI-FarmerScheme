@@ -1,4 +1,4 @@
-.navbar-nav > li{
+/* .navbar-nav > li{
     padding-left:100px;
     padding-right:100px;
     height:auto;
@@ -7,9 +7,9 @@
     width: 1200px;
     margin:  auto;
     
-}
+} */
  
-input{
+/* input{
     width: 80%;
     padding: 12px 20px;
     margin: 6px 0;
@@ -20,7 +20,7 @@ input{
   label{
       padding-right: 40px;
   }
-  
+   */
   button {
     background-color: #04AA6D;
     color: white;
@@ -30,14 +30,14 @@ input{
     cursor: pointer;
     width: 100%;
   }
-  div {
+  /* div {
         margin-bottom: 10px;
       }
       label {
         display: inline-block;
-        width: 150px;
+        
         text-align: right;
-      }
+      } */
 
   .border{
     

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewsoldhistoryComponent } from './viewsoldhistory.component';
+import { PlaceSellRequestComponent } from './place-sell-request.component';
 
-describe('ViewsoldhistoryComponent', () => {
-  let component: ViewsoldhistoryComponent;
-  let fixture: ComponentFixture<ViewsoldhistoryComponent>;
+describe('PlaceSellRequestComponent', () => {
+  let component: PlaceSellRequestComponent;
+  let fixture: ComponentFixture<PlaceSellRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewsoldhistoryComponent ]
+      declarations: [ PlaceSellRequestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewsoldhistoryComponent);
+    fixture = TestBed.createComponent(PlaceSellRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

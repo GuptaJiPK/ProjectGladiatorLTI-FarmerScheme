@@ -4,11 +4,11 @@ import { Insurance } from 'src/Models/Insurance';
 import { InsuranceService } from 'src/Service/InsuranceService';
 
 @Component({
-  selector: 'app-applyinsurance',
-  templateUrl: './applyinsurance.component.html',
-  styleUrls: ['./applyinsurance.component.css']
+  selector: 'app-apply-insurance',
+  templateUrl: './apply-insurance.component.html',
+  styleUrls: ['./apply-insurance.component.css']
 })
-export class ApplyinsuranceComponent implements OnInit {
+export class ApplyInsuranceComponent implements OnInit {
 
   insurance:any;
   insurancedetails:any;
@@ -17,7 +17,7 @@ export class ApplyinsuranceComponent implements OnInit {
   msg: any;
   ApplyForm:FormGroup;
 
-  constructor(private insuranceservice:InsuranceService){
+  constructor(private insuranceservice:InsuranceService) {
     this.insurance=new Insurance();
     this.ApplyForm=new FormGroup(
       {
@@ -28,11 +28,11 @@ export class ApplyinsuranceComponent implements OnInit {
       area:new FormControl(null,Validators.required)
       }
     )
-  }
+   }
 
   ngOnInit(): void {
   }
-  
+
   get f() { return this.ApplyForm.controls; }
   onApply() {
       debugger;
@@ -64,5 +64,4 @@ export class ApplyinsuranceComponent implements OnInit {
     this.ApplyForm.reset();
 
   }
-
 }
