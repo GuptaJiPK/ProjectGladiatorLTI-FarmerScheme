@@ -1,0 +1,58 @@
+.navbar-nav > li{
+    padding-left:50px;
+    padding-right: 50px;
+   
+  }
+  #context {
+    width: 1800px;
+    margin:  auto;
+    
+}
+.navbar-navli {
+
+  display: inline-block;
+  
+  margin: 5;
+  
+  margin-left: auto; 
+  
+  }
+ 
+input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  label{
+      padding-right: 40px;
+  }
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
+
+      .card {
+        margin: 175px; 
+        float: none; 
+        margin-bottom: 10px; 
+}
+h1 {
+  text-align:center;
+}

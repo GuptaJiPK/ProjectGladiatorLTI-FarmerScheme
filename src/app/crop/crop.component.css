@@ -1,0 +1,51 @@
+.navbar-nav > li{
+    padding-left:100px;
+    padding-right:100px;
+    height:auto;
+  }
+  #context {
+    width: 1200px;
+    margin:  auto;
+    
+}
+ 
+input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1.5px solid #38b76b;
+    box-sizing: border-box;
+  }
+  label{
+      padding-right: 40px;
+  }
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
+
+  .border{
+    
+    border: 1.5px solid #38b76b !important;
+  }
+  .upload{
+    font-weight:bold;
+    color:#28a745;
+    margin-left: 15px;
+    line-height: 36px;
+}

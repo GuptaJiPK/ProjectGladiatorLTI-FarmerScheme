@@ -12,7 +12,7 @@ export class User{
             panCard?:string;
             certificate?:string; 
             traderLicense?:string; 
-            password?:string;
+            password?:any;
             verificationStatus?:string; 
             approvedBy?:string ;         
 }

@@ -1,11 +1,10 @@
 export class Bidder{
-        bidId?:Number;
+        bId1?:Number;
         cropId?:Number;
         userId?:Number;
-        msp?:Number;
-       currentBid?:Number;
-        finalBid?:Number;
-        previousBids?:Number;
+        
+        bidAmount?:Number;
+        
         dateOfBid?:Number;
-        approvalStatus?:Number;
+        bidStatus?:Number;
 }

@@ -1,4 +1,4 @@
-<!-- <p>login works!</p> -->
+<p>login works!</p>
 <div class="container-fluid loginback" style="background-image: url(assets/images/login/background/loginback.jpg)" >
     <div class="container">
         <div class="row">
@@ -6,31 +6,42 @@
 
             </div>
             <div class="col-md-6">
-                <form [formGroup]="loginform" method="post">
+                <form [formGroup]="userlogin" method="post">
     
   
                     <div class="container">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" formControlName="name" placeholder="Enter Username" name="uname" required>
-                        <div *ngIf="!loginform.get('name')?.valid && (loginform.get('name')?.dirty || loginform.get('name')?.touched)" class="error">
-                            <div *ngIf="loginform.get('name')?.errors?.required">
-                            <small class="text-danger">Username Is Required</small>
+                      <div class="form-group">
+                        <label for="email"><b>Enter Email</b></label>
+                        <input type="email" formControlName="email" placeholder="Enter Username" name="email"  required>
+                        <div *ngIf="!userlogin.get('email')?.valid && (userlogin.get('email')?.dirty || userlogin.get('email')?.touched)" class="error">
+
+                        </div>
+                      
+                            <div *ngIf="userlogin.get('email')?.errors?.required">
+                            <small class="text-danger">Email Is Required</small>
                 
                             </div>
-                        </div>   
-                  
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" formControlName="pwd" placeholder="Enter Password" name="psw" required>
-                        <div *ngIf="!loginform.get('pwd')?.valid&&(loginform.get('pwd')?.dirty || loginform.get('pwd')?.touched)" class="error">
-                            <div *ngIf="loginform.get('pwd')?.errors?.required">
+                      </div>   
+                      <div class="form-group">
+                        <label><b>Password</b></label>
+                        <input type="password" formControlName="password" placeholder="Enter Password" name="password"  required>
+
+                      </div>
+                      
+                        <div *ngIf="!userlogin.get('password')?.valid&&(userlogin.get('password')?.dirty || userlogin.get('password')?.touched)" class="error">
+                            <div *ngIf="userlogin.get('password')?.errors?.required">
                             <small class="text-danger">Password Is Required</small>
                 
                             </div>
                         </div>
 
                       <br><br>
+                      <div class="form-group">
+                        <button type="submit" (click)="onSubmit()" class="btn btn-outline-primary" [disabled]="!userlogin.valid">
+                          <a routeLink="/admin">Login</a> </button>
+                      </div>
                   
-                      <button type="submit">Login</button>
+                      
                       <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                       </label>
@@ -49,6 +60,9 @@
 
             </div>
             <div class="col-md-3">
+              <!-- <h1>{{login.email}}</h1>
+              <h1>{{login.password}}</h1> -->
+
 
             </div>
 

@@ -20,32 +20,31 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">Bidder Id</th>
-                                <th>User Id</th>
+                                
                                 <th>Crop Id</th>
-                                <th>MSP</th>
-                                <th>Current Bid</th>
-                                <th>Previous Bid</th>
-                                <th>Final Bid</th>
+                                <th>User Id</th>
+                                
+                               
+                                <th> Bid Amount</th>
                                 <th>Date of Bid</th>
-                                <th>Approval Status</th>
+                                <th>Bid Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let b of service.bidderlist">
-                                <td>{{b.bidId}}</td>
-                                <td>{{b.userId}}</td>
+                                <td>{{b.bId1}}</td>
+                                
                                 <td>{{b.cropId}}</td>
-                                <td>{{b.msp}}</td>
-                                <td>{{b.currentBid}}</td>
-                                <td>{{b.previousBids}}</td>
-                                <td>{{b.finalBid}}</td>
+                                <td>{{b.userId}}</td>
+                               
+                                <td>{{b.bidAmount}}</td>
                                 <td>{{b.dateOfBid}}</td>
-                                <td>{{b.approvalStatus}}</td>
+                                <td>{{b.bidStatus}}</td>
                                 <!-- <td><p class="box-title" style="margin-top:2px; margin-left:5px;" id="editable">{{b.approvalStatus}}</p></td>
                                 <input type="text"  id="inputgroupname" style="display:none;"> -->
                                 <td>
-                                    <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(b.bidId)" ></i>
+                                    <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(b.bId1)" ></i>
                                 </td>
                                 <td>
                                     <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(b)"></i>
@@ -65,7 +64,7 @@
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <form #form="ngForm">
-                        <input type="hidden" name="bidId" [value]="service.formData.bidId">
+                        <input type="hidden" name="bId1" [value]="service.formData.bId1">
                         <div class="form-group">
                             <label>Crop Id</label>
                             <input class="form-control" placeholder="Enter Crop Id"
@@ -80,31 +79,18 @@
                         </div>
             
             
-                        <div class="form-group">
-                            <label>MSP</label>
-                            <input class="form-control" placeholder="Enter MSP "
-                             name="msp" #msp="ngModel" [(ngModel)]="service.formData.msp">
-                        </div>
+                        
+            
+            
+            
+            
+                        
             
             
                         <div class="form-group">
-                            <label>Current Bid</label>
-                            <input class="form-control" placeholder="Enter Current Bid"
-                             name="currentBid" #currentBid="ngModel" [(ngModel)]="service.formData.currentBid">
-                        </div>
-            
-            
-                        <div class="form-group">
-                            <label>Final Bid</label>
-                            <input class="form-control" placeholder="Enter Final Bid"
-                             name="finalBid" #finalBid="ngModel" [(ngModel)]="service.formData.finalBid">
-                        </div>
-            
-            
-                        <div class="form-group">
-                            <label>Previous Bids</label>
-                            <input class="form-control" placeholder="Enter Previous Bid"
-                             name="previousBids" #previousBids="ngModel" [(ngModel)]="service.formData.previousBids">
+                            <label> Bid Amount</label>
+                            <input class="form-control" placeholder="Enter Bid Amount"
+                             name="bidAmount" #bidAmount="ngModel" [(ngModel)]="service.formData.bidAmount">
                         </div>
             
             
@@ -114,9 +100,9 @@
                              name="dateOfBid" #dateOfBid="ngModel" [(ngModel)]="service.formData.dateOfBid">
                         </div>
                         <div class="form-group">
-                            <label>Approval Status</label>
-                            <input class="form-control" placeholder="Enter Approval Status"
-                             name="approvalStatus" #approvalStatus="ngModel" [(ngModel)]="service.formData.approvalStatus">
+                            <label>Bid Status</label>
+                            <input class="form-control" placeholder="Enter Bid Status"
+                             name="bidStatus" #bidStatus="ngModel" [(ngModel)]="service.formData.bidStatus">
                         </div>
                         <br>
                         

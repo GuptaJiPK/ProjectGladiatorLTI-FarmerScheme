@@ -1,6 +1,6 @@
 .name{
     float: right;
-    margin-top: 15px;
+    /* margin-top: -75px; */
     color: #90c43e;
 }
 
@@ -13,7 +13,7 @@
 }
 .nav-social{
 	margin-top: 5px;
-    margin-left: 400px;
+    margin-left: 50px;
     font-size: 20px;
     /* color: #ff1616; */
     text-decoration: none;

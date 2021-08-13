@@ -8,7 +8,7 @@ export class BidderService{
     constructor(private http:HttpClient){
 
     }
-    readonly uri="http://localhost:6073/api/BidderMarketplaces";
+    readonly uri="http://localhost:6073/api/Bids";
 
     formData:Bidder=new Bidder();
     bidderlist?:Bidder[];
@@ -24,7 +24,7 @@ export class BidderService{
     }
     putBidDetails(){
         //debugger;
-        return this.http.put(`${this.uri}/${this.formData.bidId}`,this.formData);
+        return this.http.put(`${this.uri}/${this.formData.bId1}`,this.formData);
     }
 
     deleteBidDetails(id:number){

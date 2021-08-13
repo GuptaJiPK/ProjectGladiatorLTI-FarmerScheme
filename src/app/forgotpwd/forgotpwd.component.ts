@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-forgotpwd',

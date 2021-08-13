@@ -1,0 +1,67 @@
+<p>biddermainpage works!</p>
+
+
+      <br>
+      <br>
+      <br>
+      <h1>WELCOME BIDDER</h1>
+      <h1 ngIf="Cropbids==null" style="color: red;">Nothing available to bid on </h1>
+ <br>
+ <br>
+ <div class="card-body">
+  <br>
+  <table class="table">
+  <thead class="thead-dark">
+      <tr>
+        <th>CropName</th>
+          <th>CropType</th>
+          <th>BasePrice</th>
+          <th>CurrentBid</th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let item of Cropbids">
+      <tr >
+      <td>{{item.cropname}}</td>
+       <td>{{item.croptype}}</td>
+       <td>{{item.baseMSp}}</td>
+       <td>{{item.currentBid}}</td>
+       
+      </tr>
+  </tbody>
+  </table>
+
+</div>
+
+<div class="container" >
+  <div class="card-columns d-flex justify-content-center">
+    
+      <div class="card text-center" style="width: 18rem;">
+        <div class="card-header">
+          <b>PREVIOUS BIDS</b>
+          
+        </div>
+        <div class="card-body">
+          <div>
+            <img class="card-img-top" src="assets/images/index.jpg" alt="Previous bids" width="20" height="200">
+          </div>
+          <a routerLink="" class="btn btn-primary">VIEW BIDS</a>
+        </div>
+        
+      </div>
+      
+        <div class="card text-center" style="width: 18rem;">
+          <div class="card-header">
+            <b>PLACE NEW BIDS</b>
+            
+          </div>
+          <div class="card-body">
+            <div>
+              <img class="card-img-top" src="assets/images/index.jpg" alt="Previous bids" width="20" height="200">
+            </div>
+            <a routerLink="" class="btn btn-primary">PLACE BIDS</a>
+          </div>
+    
+  </div>
+</div>
+  
+</div>

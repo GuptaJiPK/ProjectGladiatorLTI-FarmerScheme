@@ -1,0 +1,52 @@
+<p>bidcomponent works!</p>
+
+
+<div class="content">
+    <form [formGroup]="bidform" class="card" (ngSubmit)="addRequest()"> 
+        <div class="row ">
+            <div class="col-md-6 mb-3 ">    
+        <p>
+            <label>cropname:</label>
+            <input type="text" formControlName="cropname" class="form-control ">
+        </p>
+        
+        <div *ngIf="!bidform.get('cropname')?.valid && (bidform.get('cropname')?.dirty || bidform.get('cropname')?.touched)" class="error">
+            <div *ngIf="bidform.get('cropname')?.errors?.required">
+            <small class="text-danger">Please Enter the Crop Name.</small>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6 mb-3">
+        <p>
+            <label>date of bid :</label>
+            <input type="date" formControlName="dateofbid" class="form-control ">
+        </p>
+        <div *ngIf="!bidform.get('dateofbid')?.valid && (bidform.get('dateofbid')?.dirty || bidform.get('dateofbid')?.touched)" class="error">
+            <div *ngIf="bidform.get('dateofbid')?.errors?.required">
+                <small class="text-danger">Please Enter the Date of bid.</small>
+            </div>
+        </div>
+        </div></div>
+    
+        <div class="row">
+            <div class="col-md-6 mb-3">
+        <p>
+            <label>bid amt :</label>
+            <input type="text" formControlName="bidamt" class="form-control ">
+        </p>
+        
+        <div *ngIf="!bidform.get('bidamt')?.valid && (bidform.get('bidamt')?.dirty || bidform.get('bidamt')?.touched)" class="error">
+            <div *ngIf="bidform.get('bidamt')?.errors?.required">
+            <small class="text-danger">Please Enter the Bid Amount.</small>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-6 mb-3">
+        <div class="form-center">
+        <button class="btn btn-success" type="submit" [disabled]="!bidform.valid">Claim Request</button>
+        </div>
+    </div></div> 
+    </form>
+    
+    </div>

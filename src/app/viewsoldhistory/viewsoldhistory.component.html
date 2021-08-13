@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+  
+
+<!-- <div>
+    <table>
+        <thead class="thead">
+            <tr>
+            <th  scope="col">Crop Name</th>
+            <th  scope="col">Quantity</th>
+            <th  scope="col">Bidder Name</th>
+            <th  scope="col">Date</th>
+            <th  scope="col">MSP</th>
+            <th  scope="col">Sold Price</th>
+            <th  scope="col">Total Price</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let crops of cropsold">
+                <td scope="row">{{crops.CropName}}</td>
+                <td scope="row">{{crops.Quantity}}</td>
+                <td scope="row">{{crops.BidderName}}</td>
+                <td  scope="row">{{crops.DateOfSoldCrop | date }}</td>
+                <td scope="row">{{crops.BasePriceAsMSP}}</td>
+                <td scope="row">{{crops.FinalBidAmount}}</td>
+                <td scope="row">{{crops.totalprice}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<!-- ==================================CROP Table===================================== -->
+<table class="table">
+    
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Type</th>
+          
+          <th>Sold Price</th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let c of crops">
+      <tr>
+          <td>{{c.cropId}}</td>
+          <td>{{c.cropName}}</td>
+          <td>{{c.cropType}}</td>
+          <td>{{c.soldPrice}}</td>
+          
+          
+      </tr>
+
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>

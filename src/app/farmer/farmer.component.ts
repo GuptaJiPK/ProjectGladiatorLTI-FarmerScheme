@@ -7,8 +7,12 @@ import { FormBuilder, FormGroup, FormControl, FormArray, Validators, AbstractCon
   styleUrls: ['./farmer.component.css']
 })
 export class FarmerComponent implements OnInit {
+
   registrationForm;
-  constructor(private fb:FormBuilder) {
+
+  constructor(private fb:FormBuilder) 
+  {
+
     this.registrationForm=this.fb.group({
       fullname: ['', [Validators.required]],
       Contact: ['', [Validators.required]],
@@ -34,9 +38,11 @@ export class FarmerComponent implements OnInit {
     if (c.get('pwd')?.value !== c.get('confirmpassword')?.value) {
         //return {invalid: true};
     }
-   }
-
-  ngOnInit(): void {
   }
+
+  ngOnInit() 
+  {
+  }
+
 
 }
