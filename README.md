@@ -34,25 +34,27 @@ The bidding module will enable the farmer to place crops for auction and receive
 
 ## MODULE DESCRIPTION 
 
-# 1. Home Module: 
+### 1.1 Home Module: 
 This is the index page for all users. It has a horizontal menu consisting of the following tabs: Home, About US, Login, Contact US.
-## 1.2  About Us: This page displays the information about the system to all users. 
-## 1.3 Login: Login module asks the user to enter credentials to log into the system. Only authenticated users can log into the system. If a user is logging in for the first time, then user must register themselves. This module has controls-Email, Password, Forgot Password Link, Login button, Link for registration. Users can avail the Forgot password facility if the user forgets the password. Once the link has been clicked, the user will be asked to input the email, and the credentials will be mailed to the user. 1.3 Contact Us: 
+#### 1.2  About Us:
+This page displays the information about the system to all users. 
+#### 1.3 Login:
+Login module asks the user to enter credentials to log into the system. Only authenticated users can log into the system. If a user is logging in for the first time, then user must register themselves. This module has controls-Email, Password, Forgot Password Link, Login button, Link for registration. Users can avail the Forgot password facility if the user forgets the password. Once the link has been clicked, the user will be asked to input the email, and the credentials will be mailed to the user. 1.3 Contact Us: 
 This page allows the user to contact the system users (Admin) by specifying necessary message. The system reaches the user identified by email id entered by user in contact form. 
  
  
-# 2. Registration Module:  
+### 2. Registration Module:  
 When user clicks on registration link, system will ask user for type of user. Whether user is farmer or bidder? Once user selects the type, appropriate registration form will open and ask the user to enter data to register themselves into the system. Fields for registration module will be different for each user. 
  
-# 3. Welcome Module 
+## 3. Welcome Module 
 Once the authorized user logs in, Welcome module will be displayed to user according to type of user. 
  
-## 3.1 Farmer Welcome module consist of two links as shown below:
-### • Bidding- 
+### 3.1 Farmer Welcome module consist of two links as shown below:
+#### • Bidding- 
 This module plays an important role, as many farmers don’t get a proper price for their product. The bidding module provides a platform for Farmers and Traders to sell and purchase crops. 
 An authenticated farmer can request for crop sell by putting crop details like crop name, crop type, variety and quantity in the system for bidding.  The admin will review the request and take necessary action after proper quality check has been done. 
  
-### • Insurance: 
+#### • Insurance: 
 Insurance module allows a farmer to apply for insurance policies to insure crops from damages due to any calamities.               
 The sub modules are as follows: 
  
@@ -76,10 +78,10 @@ The sub modules are as follows:
       III. Once the form is filled with all fields admin will process the information and take necessary action including notifying the farmer about progress of claim request. 
  
  
-## 3.2  Bidder Welcome module consist of bidding module: 
+### 3.2  Bidder Welcome module consist of bidding module: 
 This module allows the bidder to see the current bidding details on their screen and system allows user to bid any crop by clicking on bid button. Once the user bid for any crop the bidding details will be displayed to user and data will be filled into the database. 
  
-## 3.3 Admin Welcome module:
+### 3.3 Admin Welcome module:
 This module allows admin to see all bidders and farmers in the system.  Admin controls the entire bidding process and approves bids. Roles to be played by Admin:
 •  Grant user to access into the system by validating certain documents which are provided by user at the time of registration. 
 • Permit farmer to sell their quality crop. 
