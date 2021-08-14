@@ -1,6 +1,5 @@
 # FarmerScheme
-
-Problem statement:  Farm-Scheme is a project in Agriculture domain. It is a Java/.NET Web-based application which gives an idea to the farmers how to use e-farming to sell their products. Farmers will get new ideas to improve their productivity, they can buy and sell their products online from different cities through the process of bidding.  Farmers can use this facility and avail benefits of different schemes available which will increase their profit.  
+ Farm-Scheme is a project in Agriculture domain. It is a Java/.NET Web-based application which gives an idea to the farmers how to use e-farming to sell their products. Farmers will get new ideas to improve their productivity, they can buy and sell their products online from different cities through the process of bidding.  Farmers can use this facility and avail benefits of different schemes available which will increase their profit.  
  
 Project Abstract: 
 • To encourage farmers to adopt innovative and modern agricultural practices.
@@ -33,7 +32,7 @@ The Government of India provides various schemes for farmers, but due to lack of
 We are implementing a system which is automated and helps to reduce the burden on farmers as well as the system. We are providing an online means to apply and claim insurance which will help the system to work efficiently and enhance smooth handling of records. 
 The bidding module will enable the farmer to place crops for auction and receive best price from auction which stabilizes the farmer’s income as well as eliminates the stress of physical sale of crops in the market. We have implemented two modules which will help the farmer to make use of technology and reduce the efforts for selling the crops. 
  
- 
+<hr> 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
