@@ -13,7 +13,7 @@ USERS:  There are three types of users in the system:
 • Farmer 
 • Bidder  
  
-#Module 1- Bidding 
+# Module 1- Bidding 
  
 This module will focus on bidding of crops by bidders in different cities. Registered users will have access to the online market place where individuals can request their crops for auction and potential buyers can make bids.  
 A seller will request for a crop auction, specifying details of the crops including quantity. A seller can see current bids and log of all crops sold. 
@@ -22,12 +22,12 @@ Admin will control the entire bidding process, approve the crop to be sold and t
  
  
  
-#Module 2 – Fasal Bima Yojna:  
+# Module 2 – Fasal Bima Yojna:  
  
 • To provide insurance coverage and financial support to the farmers in the event of failure of any of the notified crop because of natural calamities, pests & diseases.  • To stabilize the income of farmers to ensure their continuance in farming.
 • There will be a uniform premium of only 2% to be paid by farmers for all Kharif crops and 1.5% for all Rabi crops. In case of annual commercial and horticultural crops, the premium to be paid by farmers will be only 5%. The premium rates to be paid by farmers are very low and balance premium will be paid by the Government to provide full insured amount to the farmers against crop loss on account of natural calamities.  
  
-##Schemes for Farmer 
+## Schemes for Farmer 
 
 The Government of India provides various schemes for farmers, but due to lack of awareness and miscommunication, farmers do not avail these benefits. Hence, we try to integrate some of the schemes like Fasal Bima Yojna and Bidding of Crops scheme. 
 We are implementing a system which is automated and helps to reduce the burden on farmers as well as the system. We are providing an online means to apply and claim insurance which will help the system to work efficiently and enhance smooth handling of records. 
