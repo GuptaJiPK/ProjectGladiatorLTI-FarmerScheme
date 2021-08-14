@@ -1,0 +1,23 @@
+<p>view-current-bids works!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <!--<th>bidId</th>-->
+            <th>UserID</th>
+            <th>CropId</th>
+            <th>MSP</th>
+            <th>FinalBid</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let b of bidding">
+        <tr>
+         <!--<td>{{b.bId}}</td>-->
+         <td>{{b.userId}}</td>
+         <td>{{b.cropId}}</td>
+         <td>{{b.basePriceAsMsp}}</td>
+         <td>{{b.finalBidAmount}}</td>
+        </tr>
+    </tbody>
+    </table>

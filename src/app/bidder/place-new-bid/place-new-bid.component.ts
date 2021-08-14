@@ -4,11 +4,11 @@ import { ToastrService } from 'ngx-toastr';
 import { BidService } from 'src/Service/BidService';
 
 @Component({
-  selector: 'app-bidcomponent',
-  templateUrl: './bidcomponent.component.html',
-  styleUrls: ['./bidcomponent.component.css']
+  selector: 'app-place-new-bid',
+  templateUrl: './place-new-bid.component.html',
+  styleUrls: ['./place-new-bid.component.css']
 })
-export class BidcomponentComponent implements OnInit {
+export class PlaceNewBidComponent implements OnInit {
   bidform:FormGroup;
   constructor(private bidservice:BidService,private toastr:ToastrService) {
     this.bidform=new FormGroup(

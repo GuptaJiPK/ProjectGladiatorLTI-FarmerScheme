@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { BidderComponent } from './bidder/bidder.component';
+import { BidderComponent } from './bidder/bidder.component';
 import { FarmerComponent } from './farmer/farmer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -21,24 +21,27 @@ import { ClaimDetailsComponent } from './admin/claim-details/claim-details.compo
 
 
 import { InsuranceService } from 'src/Service/InsuranceService';
-import { BiddermainpageComponent } from './biddermainpage/biddermainpage.component';
+
 import { BidderCropService } from 'src/Service/BidderCropService';
 import { ClaimService } from 'src/Service/claimService';
 import { BidhistoryComponent } from './bidhistory/bidhistory.component';
 
 
 import { UploadComponent } from './upload/upload.component';
-import { FarmerwelcomeComponent } from './farmerwelcome/farmerwelcome.component';
+
 import { CropService } from 'src/Service/cropService';
-import { BidcomponentComponent } from './bidcomponent/bidcomponent.component';
+
 import { PlaceSellRequestComponent } from './farmer/place-sell-request/place-sell-request.component';
 import { ViewMarketPlaceComponent } from './farmer/view-market-place/view-market-place.component';
 import { SoldCropHistoryComponent } from './farmer/sold-crop-history/sold-crop-history.component';
 import { InsuranceComponent } from './farmer/insurance/insurance.component';
 import { ApplyInsuranceComponent } from './farmer/insurance/apply-insurance/apply-insurance.component';
 import { ClaimInsuranceComponent } from './farmer/insurance/claim-insurance/claim-insurance.component';
-import { ViewbidsComponent } from './viewbids/viewbids.component';
+
 import { ViewBidService } from 'src/Service/viewBidService';
+import { ViewCurrentBidsComponent } from './bidder/view-current-bids/view-current-bids.component';
+import { PlaceNewBidComponent } from './bidder/place-new-bid/place-new-bid.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -48,7 +51,7 @@ import { ViewBidService } from 'src/Service/viewBidService';
 @NgModule({
   declarations: [
     AppComponent,
-    //BidderComponent,
+    BidderComponent,
     FarmerComponent,
     HomeComponent,
     LoginComponent,
@@ -61,23 +64,28 @@ import { ViewBidService } from 'src/Service/viewBidService';
     BidderDetailsComponent,
     UserDetailsComponent,
     ClaimDetailsComponent,
-    BiddermainpageComponent,
+    
     BidhistoryComponent,
     UploadComponent,
-    FarmerwelcomeComponent,
-    BidcomponentComponent,
+    
+   
     PlaceSellRequestComponent,
     ViewMarketPlaceComponent,
     SoldCropHistoryComponent,
     InsuranceComponent,
     ApplyInsuranceComponent,
     ClaimInsuranceComponent,
-    ViewbidsComponent,
+   
+    ViewCurrentBidsComponent,
+    PlaceNewBidComponent,
   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,FormsModule,HttpClientModule
+    AppRoutingModule,ReactiveFormsModule,FormsModule,HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass :'toast-bottom-right'
+    })
   ],
   providers: [UserService,InsuranceService,BidderCropService,ClaimService,CropService,ViewBidService],
   bootstrap: [AppComponent]
