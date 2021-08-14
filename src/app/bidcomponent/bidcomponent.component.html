@@ -1,6 +1,29 @@
 <p>bidcomponent works!</p>
 
-
+<div class="card-body">
+    <br>
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <!-- <th>CropId</th> -->
+            <th>CropName</th>
+            <th>CropType</th>
+            <th>BasePrice</th>
+            <th>CurrentBid</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of Cropbids">
+        <tr >
+         <!-- <td>{{item.cropid}}</td> -->
+         <td>{{item.cropname}}</td>
+         <td>{{item.croptype}}</td>
+         <td>{{item.baseMSp}}</td>
+         <td>{{item.currentBid}}</td>
+         
+        </tr>
+    </tbody>
+    </table>
+    <!-- ////////////////////// -->
 <div class="content">
     <form [formGroup]="bidform" class="card" (ngSubmit)="addRequest()"> 
         <div class="row ">
@@ -19,7 +42,7 @@
         <div class="col-md-6 mb-3">
         <p>
             <label>date of bid :</label>
-            <input type="date" formControlName="dateofbid" class="form-control ">
+            <input type="date" formControlName="dateofbid" class="form-control" max="{{maxDate}}" min="{{minDate}}">
         </p>
         <div *ngIf="!bidform.get('dateofbid')?.valid && (bidform.get('dateofbid')?.dirty || bidform.get('dateofbid')?.touched)" class="error">
             <div *ngIf="bidform.get('dateofbid')?.errors?.required">

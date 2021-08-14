@@ -26,6 +26,7 @@ import { PlaceSellRequestComponent } from './farmer/place-sell-request/place-sel
 import { ViewMarketPlaceComponent } from './farmer/view-market-place/view-market-place.component';
 import { SoldCropHistoryComponent } from './farmer/sold-crop-history/sold-crop-history.component';
 import { InsuranceComponent } from './farmer/insurance/insurance.component';
+import { ViewbidsComponent } from './viewbids/viewbids.component';
 
 
 //adding route details
@@ -55,6 +56,8 @@ children:[
   
   {path:'biddermainpage',component:BiddermainpageComponent},
   {path:'bidcomponent',component:BidcomponentComponent},
+  {path:'viewbid',component:ViewbidsComponent},
+
   {path:'admin',component:AdminComponent,
   children:[
   {path:'user-details',component:UserDetailsComponent},

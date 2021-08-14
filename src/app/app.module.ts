@@ -37,6 +37,8 @@ import { SoldCropHistoryComponent } from './farmer/sold-crop-history/sold-crop-h
 import { InsuranceComponent } from './farmer/insurance/insurance.component';
 import { ApplyInsuranceComponent } from './farmer/insurance/apply-insurance/apply-insurance.component';
 import { ClaimInsuranceComponent } from './farmer/insurance/claim-insurance/claim-insurance.component';
+import { ViewbidsComponent } from './viewbids/viewbids.component';
+import { ViewBidService } from 'src/Service/viewBidService';
 
 
 
@@ -70,13 +72,14 @@ import { ClaimInsuranceComponent } from './farmer/insurance/claim-insurance/clai
     InsuranceComponent,
     ApplyInsuranceComponent,
     ClaimInsuranceComponent,
+    ViewbidsComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,ReactiveFormsModule,FormsModule,HttpClientModule
   ],
-  providers: [UserService,InsuranceService,BidderCropService,ClaimService,CropService],
+  providers: [UserService,InsuranceService,BidderCropService,ClaimService,CropService,ViewBidService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

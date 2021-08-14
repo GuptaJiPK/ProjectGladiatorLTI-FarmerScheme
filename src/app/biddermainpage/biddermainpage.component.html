@@ -1,37 +1,7 @@
 <p>biddermainpage works!</p>
 
 
-      <br>
-      <br>
-      <br>
-      <h1>WELCOME BIDDER</h1>
-      <h1 ngIf="Cropbids==null" style="color: red;">Nothing available to bid on </h1>
- <br>
- <br>
- <div class="card-body">
-  <br>
-  <table class="table">
-  <thead class="thead-dark">
-      <tr>
-        <th>CropName</th>
-          <th>CropType</th>
-          <th>BasePrice</th>
-          <th>CurrentBid</th>
-      </tr>
-  </thead>
-  <tbody *ngFor="let item of Cropbids">
-      <tr >
-      <td>{{item.cropname}}</td>
-       <td>{{item.croptype}}</td>
-       <td>{{item.baseMSp}}</td>
-       <td>{{item.currentBid}}</td>
-       
-      </tr>
-  </tbody>
-  </table>
-
-</div>
-
+     
 <div class="container" >
   <div class="card-columns d-flex justify-content-center">
     

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IClaimService } from 'src/Service/iclaim';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-claim-insurance',
   templateUrl: './claim-insurance.component.html',
@@ -9,7 +10,7 @@ import { IClaimService } from 'src/Service/iclaim';
 export class ClaimInsuranceComponent implements OnInit {
 
   claimform:FormGroup;
-  constructor(private iclaimservice:IClaimService) {
+  constructor(private iclaimservice:IClaimService,private toastr:ToastrService) {
     this.claimform=new FormGroup(
       {
         PolicyNo:new FormControl(null,Validators.required),
@@ -52,9 +53,11 @@ export class ClaimInsuranceComponent implements OnInit {
     debugger;
     this.iclaimservice.PostDetails(this.claimform.value).subscribe((data)=>{console.table(data);this.message=data},
     (err)=>{this.errmsg=err.error.Message;
-    //this.toastr.success('Submitted successfully', 'Claim Application placed')
+    this.toastr.success('Submitted successfully', 'Claim Application placed')
     });
   }
+
+  
   
 
 }

@@ -8,30 +8,14 @@ import { BidderCropService } from 'src/Service/BidderCropService';
 })
 export class BiddermainpageComponent implements OnInit {
 
-  constructor(private biddercropservice:BidderCropService ) { }
+  constructor( ) { }
 
   ngOnInit(): void {
-    this.fetchcropbid();
+   
    
   }
 
 
-  Cropbids:any[]=[]
-  bidding:any[]=[]
-  errMsg?:string;
-  demo:any;
-
-
-
-  fetchcropbid() {
-    debugger;
-    this.biddercropservice.getCropBidder().subscribe((data)=>{
-    console.log(data)
-    this.demo=data; 
-    this.Cropbids=this.demo; 
-    },
-    (err)=>{this.errMsg=err.error.Meessage;
-    });
-  }
+  
 
 }
