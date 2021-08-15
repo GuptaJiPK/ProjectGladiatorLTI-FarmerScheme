@@ -14,7 +14,7 @@
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body" style="overflow: auto;">
                     <table class="table table-primary">
-                        <thead class="thead-light">
+                        <thead class="table-dark">
                             <tr>
                                 <th>Claim Id</th>
                                 <th>Policy No</th>
@@ -39,8 +39,6 @@
                                 <td>{{claim.claimStatus}}</td>
                                 <td>
                                     <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(claim.claimId)" ></i>
-                                </td>
-                                <td>
                                     <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(claim)"></i>
                                 </td>
                             </tr>

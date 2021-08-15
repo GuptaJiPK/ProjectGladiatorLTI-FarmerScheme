@@ -1,10 +1,11 @@
-<p>place-new-bid works!</p>
+
 
 
 <div class="card-body">
+    <h3>Bidding Status</h3>
     
-    <table class="table">
-    <thead class="thead-dark">
+    <table class="table table-secondary">
+    <thead class="table-dark">
         <tr>
             <!-- <th>CropId</th> -->
             <th>CropName</th>
@@ -24,27 +25,32 @@
         </tr>
     </tbody>
     </table>
+    <br>
+    <br>
     <!-- ////////////////////// -->
-<div class="content">
-    <form [formGroup]="bidform" class="card" (ngSubmit)="addRequest()"> 
+
+    <h3>Bid Request</h3>
+    <br>
+<div class="container">
+    <form [formGroup]="bidform" (ngSubmit)="addRequest()"> 
         <div class="row ">
             <div class="col-md-6 mb-3 ">    
-        <p>
-            <label>cropname:</label>
+        <div>
+             <label>Crop Name</label>
             <input type="text" formControlName="cropname" class="form-control ">
-        </p>
+        </div>
         
         <div *ngIf="!bidform.get('cropname')?.valid && (bidform.get('cropname')?.dirty || bidform.get('cropname')?.touched)" class="error">
             <div *ngIf="bidform.get('cropname')?.errors?.required">
             <small class="text-danger">Please Enter the Crop Name.</small>
             </div>
         </div>
-        </div>
+        </div><br>
         <div class="col-md-6 mb-3">
-        <p>
-            <label>date of bid :</label>
+        <div>
+            <label>Date of Bid </label>
             <input type="date" formControlName="dateofbid" class="form-control" max="{{maxDate}}" min="{{minDate}}">
-        </p>
+        </div>
         <div *ngIf="!bidform.get('dateofbid')?.valid && (bidform.get('dateofbid')?.dirty || bidform.get('dateofbid')?.touched)" class="error">
             <div *ngIf="bidform.get('dateofbid')?.errors?.required">
                 <small class="text-danger">Please Enter the Date of bid.</small>
@@ -54,10 +60,10 @@
     
         <div class="row">
             <div class="col-md-6 mb-3">
-        <p>
-            <label>bid amt :</label>
+        <div>
+            <label>Bid Amount </label>
             <input type="text" formControlName="bidamt" class="form-control ">
-        </p>
+        </div>
         
         <div *ngIf="!bidform.get('bidamt')?.valid && (bidform.get('bidamt')?.dirty || bidform.get('bidamt')?.touched)" class="error">
             <div *ngIf="bidform.get('bidamt')?.errors?.required">
@@ -65,8 +71,8 @@
             </div>
         </div>
         </div>
-    
-        <div class="col-md-6 mb-3">
+        <br>
+        <div >
         <div class="form-center">
         <button class="btn btn-success" type="submit" [disabled]="!bidform.valid">Claim Request</button>
         </div>

@@ -16,13 +16,13 @@
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body"style="overflow: auto;">
+            <div class="accordion-body"style="overflow: auto;height:500px;">
                 <table class="table table-primary">
-                    <thead class="thead-light">
+                    <thead class="table-dark">
                         <tr>
                             <th>UserId Id</th>
-                            <th>FirstName Id</th>
-                            <th>LastName Id</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
                             <th>Email</th>
                             <th>Address1</th>
                             <th>Address2</th>
@@ -33,7 +33,7 @@
                             <th>PanCard</th>
                             <th>Certificate</th>
                             <th>TraderLicense</th>
-                            <th>Password</th>
+                            <!-- <th>Password</th> -->
                             <th>VerificationStatus</th>
                             <th>ApprovedBy</th>
                             <th>Actions</th>
@@ -54,8 +54,8 @@
                             <td>{{u.panCard}}</td>
                             <td>{{u.certificate}}</td>
                             <td>{{u.traderLicense}}</td>
-                            <td>{{u.password}}</td>
-                            <td *ngIf="u.verificationStatus==='pending'"> <button class="btn btn-danger" >Pending</button></td>
+                            <!-- <td>{{u.password}}</td> -->
+                            <td *ngIf="u.verificationStatus==='pending'"> <button class="btn btn-danger" (click)='statusUpdate(u.userId)' >Pending</button></td>
                             <td *ngIf="u.verificationStatus==='verified'"> <button class="btn btn-success" disabled >Approved</button></td>
 
 
@@ -65,8 +65,7 @@
                             <input type="text"  id="inputgroupname" style="display:none;"> -->
                             <td>
                                 <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(u.userId)" ></i>
-                            </td>
-                            <td>
+                            
                                 <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(u)"></i>
                             </td>
                             
@@ -158,11 +157,11 @@
                         <input class="form-control" placeholder="Enter traderLicense"
                          name="traderLicense" #traderLicense="ngModel" [(ngModel)]="service.formData.traderLicense">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>password</label>
                         <input class="form-control" placeholder="Enter password"
                          name="password" #password="ngModel" [(ngModel)]="service.formData.password">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>verificationStatus</label>
                         <input class="form-control" placeholder="Enter verificationStatus"

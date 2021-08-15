@@ -10,7 +10,7 @@ export class BidderCropService
         
     }
 
-    readonly uri="http://localhost:6073/api/BidderWelcome?CropId=101";
+    readonly uri="http://localhost:6073/api/BidderWelcome";
 
     getCropBidder()
     {

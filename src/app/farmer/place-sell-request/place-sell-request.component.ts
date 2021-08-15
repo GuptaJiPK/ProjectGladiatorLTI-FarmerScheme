@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Crop } from 'src/Models/Crop';
 import { CropService } from 'src/Service/cropcrud/crop.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-place-sell-request',
@@ -18,7 +19,7 @@ export class PlaceSellRequestComponent implements OnInit {
   
   cropForm:any;
 
-  constructor(private fb:FormBuilder,public cropservice:CropService,private router:Router,private http: HttpClient) { 
+  constructor(private fb:FormBuilder,public cropservice:CropService,private router:Router,private http: HttpClient,public tostr:ToastrService) { 
     this.crop=new Crop();
     this.cropForm=this.fb.group({
       cropType: ['', [Validators.required]],
@@ -81,6 +82,8 @@ addCrop(){
   console.log(this.cropdetails)
   this.cropservice.insertCrop(this.cropdetails).subscribe((res)=>{
     console.log(res)
+    this.tostr.success("Added Succefully","Your Product has been added asuccessfully")
+    
     this.fetchcrop();
   },(err)=>{
     console.log(err);

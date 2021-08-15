@@ -42,6 +42,15 @@ import { ViewBidService } from 'src/Service/viewBidService';
 import { ViewCurrentBidsComponent } from './bidder/view-current-bids/view-current-bids.component';
 import { PlaceNewBidComponent } from './bidder/place-new-bid/place-new-bid.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { WelcomeComponent } from './admin/welcome/welcome.component';
+import { NewFarmerComponent } from './newuser/new-farmer/new-farmer.component';
+import { NewBidderComponent } from './newuser/new-bidder/new-bidder.component';
+import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
+import { BidderRegistrationComponent } from './bidder-registration/bidder-registration.component';
+import { FarmerRegisterService } from 'src/Service/FarmerRegister';
+import { BidderRegisterService } from 'src/Service/BidderRegister';
+
 
 
 
@@ -78,6 +87,13 @@ import { ToastrModule } from 'ngx-toastr';
    
     ViewCurrentBidsComponent,
     PlaceNewBidComponent,
+    ContactUsComponent,
+    WelcomeComponent,
+    NewFarmerComponent,
+    NewBidderComponent,
+    FarmerRegistrationComponent,
+    BidderRegistrationComponent
+    
   
   ],
   imports: [
@@ -87,7 +103,7 @@ import { ToastrModule } from 'ngx-toastr';
       positionClass :'toast-bottom-right'
     })
   ],
-  providers: [UserService,InsuranceService,BidderCropService,ClaimService,CropService,ViewBidService],
+  providers: [UserService,InsuranceService,BidderCropService,ClaimService,CropService,ViewBidService,FarmerRegisterService,BidderRegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

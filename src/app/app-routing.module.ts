@@ -29,6 +29,11 @@ import { InsuranceComponent } from './farmer/insurance/insurance.component';
 import { BidderComponent } from './bidder/bidder.component';
 import { ViewCurrentBidsComponent } from './bidder/view-current-bids/view-current-bids.component';
 import { PlaceNewBidComponent } from './bidder/place-new-bid/place-new-bid.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NewFarmerComponent } from './newuser/new-farmer/new-farmer.component';
+import { NewBidderComponent } from './newuser/new-bidder/new-bidder.component';
+import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
+import { BidderRegisterService } from 'src/Service/BidderRegister';
 
 
 //adding route details
@@ -37,7 +42,15 @@ const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'newuser',component:NewuserComponent},
+  {path:'farmerregistration',component:FarmerRegistrationComponent},
+  {path:'bidderregistration',component:BidderRegisterService},
+
+  //new user register paths
+  {path:'newuser',component:NewuserComponent,
+children:[
+  {path:'newbidder',component:NewBidderComponent},
+  {path:'newfarmer',component:NewFarmerComponent}
+]},
 
   //farmer module paths
 
@@ -72,7 +85,11 @@ children:[
   {path:'bid-details',component:BidderDetailsComponent},
   {path:'claim-details',component:ClaimDetailsComponent}
   
-]}
+]},
+
+//contact us page
+{path:'contactus',component:ContactUsComponent},
+
 
 
 //page not found

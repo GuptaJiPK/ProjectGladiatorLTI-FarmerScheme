@@ -14,5 +14,8 @@ export class User{
             traderLicense?:string; 
             password?:any;
             verificationStatus?:string; 
-            approvedBy?:string ;         
+            approvedBy?:string ;  
+            roletype?:string;
+            accountNo?:string;
+            ifscCode?:string;       
 }

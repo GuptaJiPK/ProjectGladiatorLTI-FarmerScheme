@@ -65,5 +65,16 @@ export class UserDetailsComponent implements OnInit {
       )
     }
 
+    statusUpdate(id:any){
+      this.service.ChangeStatus(id).subscribe(
+        res=>{
+          this.service.refreshlist();
+          console.log(res);
+          if(res=="Status Approved")
+          alert("Status Approved")
+        }
+      )
+    }
+
 
 }
