@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from 'src/Service/userService';
 import { AboutComponent } from './about/about.component';
-import { CropforsaleComponent } from './cropforsale/cropforsale.component';
+// import { CropforsaleComponent } from './cropforsale/cropforsale.component';
 import { CropDetailsComponent } from './admin/crop-details/crop-details.component';
 import { BidderDetailsComponent } from './admin/bidder-details/bidder-details.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
@@ -50,6 +51,7 @@ import { FarmerRegistrationComponent } from './farmer-registration/farmer-regist
 import { BidderRegistrationComponent } from './bidder-registration/bidder-registration.component';
 import { FarmerRegisterService } from 'src/Service/FarmerRegister';
 import { BidderRegisterService } from 'src/Service/BidderRegister';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
@@ -68,7 +70,7 @@ import { BidderRegisterService } from 'src/Service/BidderRegister';
     ForgotpwdComponent,
     AdminComponent,
     AboutComponent,
-    CropforsaleComponent,
+    
     CropDetailsComponent,
     BidderDetailsComponent,
     UserDetailsComponent,
@@ -92,12 +94,13 @@ import { BidderRegisterService } from 'src/Service/BidderRegister';
     NewFarmerComponent,
     NewBidderComponent,
     FarmerRegistrationComponent,
-    BidderRegistrationComponent
+    BidderRegistrationComponent,
+    PagenotfoundComponent
     
   
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,BrowserAnimationsModule,
     AppRoutingModule,ReactiveFormsModule,FormsModule,HttpClientModule,
     ToastrModule.forRoot({
       positionClass :'toast-bottom-right'

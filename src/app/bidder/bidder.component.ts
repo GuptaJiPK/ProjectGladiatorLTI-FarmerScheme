@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray, Validators, AbstractControl} from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,7 +13,7 @@ export class BidderComponent implements OnInit {
 
   registrationForm;
 
-  constructor(private fb:FormBuilder) 
+  constructor(private fb:FormBuilder,private router:Router,private tost:ToastrService) 
   {
 
     this.registrationForm=this.fb.group({
@@ -40,9 +42,20 @@ export class BidderComponent implements OnInit {
         //return {invalid: true};
     }
   }
+  email?:any;
 
   ngOnInit() 
   {
+    this.welcome();
+  }
+  logout(){
+    sessionStorage.removeItem('user');
+    this.tost.success("Succesfully Logout!!!")
+    this.router.navigate(['login']);
+    
+  }
+  welcome(){
+    this.email=sessionStorage.getItem('user');
   }
 
  

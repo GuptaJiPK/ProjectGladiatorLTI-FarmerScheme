@@ -26,8 +26,9 @@ export class PlaceSellRequestComponent implements OnInit {
       Contact: ['', [Validators.required]],
       cropName: ['', [Validators.required]],
       FertilizerType: ['', [Validators.required]],
-      Quantity: ['', [Validators.required]],   
-      SoilPh: ['', [Validators.required]] 
+     // Quantity: ['', [Validators.required]],   
+      SoilPh: ['', [Validators.required]] ,
+      Quantity: ['', [Validators.required, Validators.min(1), Validators.pattern('^(0|[1-9][0-9]*)$')]],
     },{validator: this.passwordConfirming});
   }
   passwordConfirming(c: AbstractControl) {

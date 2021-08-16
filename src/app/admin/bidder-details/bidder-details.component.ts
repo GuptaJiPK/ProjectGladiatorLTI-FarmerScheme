@@ -64,4 +64,16 @@ export class BidderDetailsComponent implements OnInit {
       )
     }
 
+    // statusUpdate(id:any){
+    //   debugger;
+    //   this.service.ChangeStatus(id).subscribe(
+    //     res=>{
+    //       this.service.refreshlist();
+    //       console.log(res);
+    //       if(res=="Status Approved")
+    //       alert("Status Approved")
+    //     }
+    //   )
+    // }
+
 }

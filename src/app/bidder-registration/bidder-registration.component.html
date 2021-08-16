@@ -17,15 +17,15 @@
           <div>
             <p>
                 <label>FirstName</label>
-                 <input type="text" formControlName="firstname">
+                 <input type="text" formControlName="firstName">
              </p>
-             <div *ngIf="!registrationForm.get('firstname')?.valid && registrationForm.get('firstname')?.touched" 
+             <div *ngIf="!registrationForm.get('firstName')?.valid && registrationForm.get('firstName')?.touched" 
              class="alert alert-danger"> First Name is required</div>
              <p>
               <label>LastName</label>
-               <input type="text" formControlName="lastname">
+               <input type="text" formControlName="lastName">
            </p>
-           <div *ngIf="!registrationForm.get('lastname')?.valid && registrationForm.get('lastname')?.touched" 
+           <div *ngIf="!registrationForm.get('lastName')?.valid && registrationForm.get('lastName')?.touched" 
            class="alert alert-danger"> LastName is required</div>
             
              <p>

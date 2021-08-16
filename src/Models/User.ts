@@ -8,11 +8,11 @@ export class User{
             city?:string;
             state?:string;
             pincode?:string;
-            aadharCard?:string;
-            panCard?:string;
-            certificate?:string; 
-            traderLicense?:string; 
-            password?:any;
+            aadharCard?:any;
+            panCard?:any;
+            certificate?:any; 
+            traderLicense?:any; 
+            password?:string;
             verificationStatus?:string; 
             approvedBy?:string ;  
             roletype?:string;

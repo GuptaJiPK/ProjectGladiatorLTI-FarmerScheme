@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { FarmerRegisterService } from 'src/Service/FarmerRegister';
 
 @Component({
@@ -13,8 +14,8 @@ export class FarmerRegistrationComponent implements OnInit {
   constructor(private fb:FormBuilder,private farmreg:FarmerRegisterService,private toastr:ToastrService) {
     this.registrationForm=this.fb.group({
       roletype:['',[Validators.required]],
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       email:['',[Validators.required,Validators.email]],
       address1:['',[Validators.required]],
       address2:['',[Validators.required]],
@@ -27,8 +28,8 @@ export class FarmerRegistrationComponent implements OnInit {
       panCard:['',[Validators.required]],
       certificate:['',[Validators.required]],
       traderLicense:['',[Validators.required]],
-      password: ['', [Validators.required, Validators.pattern("^(?=.[A-Z])(?=.[a-z])(?=.*[0-9])[A-Za-z0-9\d]{8,12}$")]],
-      confirmpassword: ['', [Validators.required, Validators.pattern("^(?=.[A-Z])(?=.[a-z])(?=.*[0-9])[A-Za-z0-9\d]{8,12}$")]]
+      password: ['', [Validators.required, Validators.pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9\d]{8,12}$")]],
+      confirmpassword: ['', [Validators.required, Validators.pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9\d]{8,12}$")]]
 
     },{validator: this.passwordConfirming});
 
@@ -47,24 +48,28 @@ export class FarmerRegistrationComponent implements OnInit {
   }
   errmsg:any;
   message:any;
+  dummy?:any[]=[];
+  dumm1?:any;
+
   addRequest(){
-    console.log(this.registrationForm.value);
-    debugger;
-    this.farmreg.PostDetails(this.registrationForm.value).subscribe((data)=>
-    //{console.table(data);this.message=data},
-    //(err)=>{this.errmsg=err.error.Message;
-    {
-      if(data==-1)
-      this.toastr.warning("Account Number already exists");
-      else if(data==0)
-      this.toastr.warning("Email already exists");
-      else
-      {
-        this.toastr.success("Registration Successsful");
+    // console.log(this.registrationForm.value);
+    // debugger;
+    // this.farmreg.PostDetails(this.registrationForm.value).subscribe((data)=>
+    // {this.dumm1=data;
+    // this.dummy=this.dumm1;},
+    // (err)=>{this.errmsg=err.error.Message;
+    
       
-      }
+     
+    // });
+    this.farmreg.PostDetails(this.registrationForm.value).subscribe((data)=>
+    {console.table(data);this.message=data},
+    (err)=>{this.errmsg=err.error.Message;
+    //this.toastr.success("Registration Successsful");
      
     });
   }
+
+  
 
 }

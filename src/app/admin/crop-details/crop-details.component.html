@@ -41,7 +41,9 @@
                                 <td>{{c.msp}}</td>
                                 <td>{{c.soldPrice}}</td>
                                 <td>{{c.totalPrice}}</td>
-                                <td>{{c.statusOfCropSell}}</td>
+                                <!-- <td>{{c.statusOfCropSell}}</td> -->
+                                <td *ngIf="c.statusOfCropSell==='pending'"> <button class="btn btn-danger" (click)='statusUpdate(c.cropId)' >Pending</button></td>
+                            <td *ngIf="c.statusOfCropSell==='approved'"> <button class="btn btn-success" disabled >Approved</button></td>
                                 <td>
                                     <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(c.cropId)" ></i>
                                

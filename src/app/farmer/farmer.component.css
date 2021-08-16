@@ -43,3 +43,8 @@ input{
     
     border: 1.5px solid #38b76b !important;
   }
+  .logout{
+    margin: auto;
+    width: 25%;
+    float: right;
+  }

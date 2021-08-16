@@ -19,7 +19,7 @@ export class UserDetailsComponent implements OnInit {
 
   //adding the record into the table
   addRecord(form:NgForm){
-    //debugger;
+    debugger;
     this.service.postUserDetails().subscribe(
       res=>{
         //to clear the fields in the form

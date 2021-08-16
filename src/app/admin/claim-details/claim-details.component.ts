@@ -60,6 +60,17 @@ export class ClaimDetailsComponent implements OnInit {
       err=>{console.log(err)}
       )
     }
+    statusUpdate(id:any){
+      debugger;
+      this.service.ChangeStatus(id).subscribe(
+        res=>{
+          this.service.refreshlist();
+          console.log(res);
+          if(res=="Status Approved")
+          alert("Status Approved")
+        }
+      )
+    }
 
 
 }

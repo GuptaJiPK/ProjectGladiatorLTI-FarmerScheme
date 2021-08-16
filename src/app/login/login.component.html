@@ -48,7 +48,7 @@
                     </div> -->
 
                     <!-- /////////////////////////////////////// -->
-                    <div class="card">
+                    <div class="card" style="background: transparent;">
                       <form [formGroup]="LoginForm" >
                           <div class="mb-2">
                               <label for="email">Enter Email</label>
@@ -66,7 +66,7 @@
                       
                       
                           <label>Password :</label>
-                              <input type="text" formControlName="password" class="form-control ">
+                              <input type="password" formControlName="password" class="form-control ">
                          
                           <div *ngIf="!LoginForm.get('password')?.valid && (LoginForm.get('password')?.dirty || LoginForm.get('password')?.touched)" class="error">
                               <div *ngIf="LoginForm.get('password')?.errors?.required">
@@ -75,11 +75,12 @@
                           </div>
                           </form>
                           {{err}}
-                          <div class="mt-5 text-center">
-                              <button class="btn btn-primary" type="submit" [disabled]="!LoginForm.valid" (click)="onLogin()">Submit</button>
-                          </div>
+                          <br>
+                          
+                              <button class="btn btn-primary login" type="submit" [disabled]="!LoginForm.valid" (click)="onLogin()">Submit</button>
+                         
                       </div>
-                          <h3>{{email}}</h3>
+                          <!-- <h3>{{email}}</h3> -->
                     <!-- //////////////////////////////////////// -->
                   
                     <div class="container" style="background-color:#f1f1f1;overflow: hidden;">

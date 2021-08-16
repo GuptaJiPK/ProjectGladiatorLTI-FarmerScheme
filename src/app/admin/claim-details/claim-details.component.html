@@ -36,7 +36,9 @@
                                 <td>{{claim.dateOfLoss}}</td>
                                 <td>{{claim.causeOfLoss}}</td>
                                 <td>{{claim.sumInsured}}</td>
-                                <td>{{claim.claimStatus}}</td>
+                                <!-- <td>{{claim.claimStatus}}</td> -->
+                                <td *ngIf="claim.claimStatus==='pending'"> <button class="btn btn-danger" (click)='statusUpdate(claim.claimId)' >Pending</button></td>
+                                <td *ngIf="claim.claimStatus==='claimed'"> <button class="btn btn-success" disabled >Approved</button></td>
                                 <td>
                                     <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(claim.claimId)" ></i>
                                     <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(claim)"></i>

@@ -30,4 +30,9 @@ export class BidderService{
     deleteBidDetails(id:number){
         return this.http.delete(`${this.uri}/${id}`);
     }
+
+    ChangeStatus(id:number){
+        debugger;
+        return this.http.post( `${this.uri}/approved?bId1=${id}`,null,{responseType:'text'});
+    }
 }

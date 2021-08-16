@@ -8,7 +8,7 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 import { AdminComponent } from './admin/admin.component';
 import { AboutComponent } from './about/about.component';
-import { CropforsaleComponent } from './cropforsale/cropforsale.component';
+
 import { CropDetailsComponent } from './admin/crop-details/crop-details.component';
 import { BidderDetailsComponent } from './admin/bidder-details/bidder-details.component';
 import { UserDetailsComponent } from './admin/user-details/user-details.component';
@@ -33,7 +33,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NewFarmerComponent } from './newuser/new-farmer/new-farmer.component';
 import { NewBidderComponent } from './newuser/new-bidder/new-bidder.component';
 import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
-import { BidderRegisterService } from 'src/Service/BidderRegister';
+
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { BidderRegistrationComponent } from './bidder-registration/bidder-registration.component';
 
 
 //adding route details
@@ -43,7 +45,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'farmerregistration',component:FarmerRegistrationComponent},
-  {path:'bidderregistration',component:BidderRegisterService},
+  {path:'bidderregistration',component:BidderRegistrationComponent},
 
   //new user register paths
   {path:'newuser',component:NewuserComponent,
@@ -93,9 +95,9 @@ children:[
 
 
 //page not found
-  // {
-    // path:'**',component:NotfoundComponent
-  // }
+   {
+     path:'**',component:PagenotfoundComponent
+   }
 ];
 
 @NgModule({

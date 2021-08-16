@@ -53,7 +53,7 @@
 
             <div class="form-group">
                 <label>Fertilizer Type</label>
-                <input type="text" class="form-control" formControlName="FertilizerType" name="FertilizerType">
+                <input type="text" class="form-control" formControlName="FertilizerType" name="FertilizerType" [(ngModel)]="cropdetails.fertilizerType">
 
             </div>
             <div *ngIf="!cropForm.get('FertilizerType')?.valid && cropForm.get('FertilizerType')?.touched"
@@ -95,7 +95,7 @@
             </div>
 
 
-            <app-upload></app-upload>
+            <!-- <app-upload></app-upload> -->
 
             <button class="btn btn-success" (click)=addCrop() type="submit">Place Sell Request</button>
 

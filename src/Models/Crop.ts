@@ -15,4 +15,19 @@ export class Crop{
           statusofCropsell?:string;
           soilCert?:string;
           fertilizerType?:string;
+          FertilizerType?:string;
+        //   /////////////////////
+        
+    //SoilPh?:number;
+            dateofSoldCrop?:Date;
+            
+            finalbidamount?:number;
+        
+            baseMSp?:number;
+            bidstatus?:string;
+            cropid?:number;
+            croptype?:string;
+            cropname?:string;
+            basemsp?:number;
+            BaseMSp?:number;
 }
