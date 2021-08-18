@@ -48,7 +48,7 @@ export class BidderComponent implements OnInit {
   {
     this.welcome();
   }
-  logout(){
+  Logout(){
     sessionStorage.removeItem('user');
     this.tost.success("Succesfully Logout!!!")
     this.router.navigate(['login']);

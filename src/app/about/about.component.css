@@ -8,3 +8,13 @@ p{
     font-family: 'Satisfy', cursive;
     font-size:20px;
 }
+.login{
+	/* float: right;
+    margin-top: -70px;
+    margin-right: 170px;
+    width: 5%; */
+	float: right;
+    position: relative;
+    top: -70px;
+
+} 

@@ -33,6 +33,6 @@ export class BidderService{
 
     ChangeStatus(id:number){
         debugger;
-        return this.http.post( `${this.uri}/approved?bId1=${id}`,null,{responseType:'text'});
+        return this.http.post( `${this.uri}/approved?bId=${id}`,null,{responseType:'text'});
     }
 }

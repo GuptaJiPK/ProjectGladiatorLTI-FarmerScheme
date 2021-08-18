@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Crop } from 'src/Models/Crop';
 import { CropService } from 'src/Service/cropcrud/crop.service';
 
@@ -13,7 +15,7 @@ export class ViewMarketPlaceComponent implements OnInit {
   message:any;
   farmerid:any;
 
-  constructor(private cropservice: CropService) { 
+  constructor(private cropservice: CropService,private route:Router) { 
     console.log(this.farmerid);
     this.cropservice.viewsoldhistory(this.farmerid).subscribe(
       sold => {this.cropsold = sold;this.message=undefined},
@@ -29,8 +31,15 @@ export class ViewMarketPlaceComponent implements OnInit {
 
   
   fetchviewmarketplacehome(){
-    debugger;
-    this.cropservice.getsoldcrops().subscribe((data)=>{console.table(data); this.crop=data;this.crops=this.crop;},
-    (err)=>{this.errmsg=err.error.Message;});}
+      debugger;
+      this.cropservice.getsoldcrops().subscribe((data)=>{console.table(data); this.crop=data;this.crops=this.crop;},
+      (err)=>{this.errmsg=err.error.Message;});}
+  
+      bidhistory(id:any){
+        this.route.navigate(['bidhistory']);
+        localStorage.setItem('cid',id);
+  
+      
+  }
 
 }

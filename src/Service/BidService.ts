@@ -11,9 +11,9 @@ export class BidService{
     readonly uri= "http://localhost:6073/api/Bid" ;
     readonly url="http://localhost:6073/api/BidderWelcome?CropId=101";
 
-    PostRequest(insu:any) {
+    PostRequest(insu:any,useremail:any) {
         debugger;
-        return this.http.post(this.uri, insu);
+        return this.http.post("http://localhost:6073/api/Bid/"+useremail, insu);
     }
     getCropBidder()
     {

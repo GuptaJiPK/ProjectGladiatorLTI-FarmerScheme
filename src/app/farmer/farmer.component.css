@@ -48,3 +48,10 @@ input{
     width: 25%;
     float: right;
   }
+  .logout{
+    float: right;
+    position: relative;
+    top: -70px;
+    margin: auto;
+    width: 10%;
+  }

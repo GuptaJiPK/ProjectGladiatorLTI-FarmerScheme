@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { User } from "src/Models/User";
+import { Userfarmer } from "src/Models/userfarmer";
 
 
 
@@ -12,7 +12,7 @@ export class FarmerRegisterService{
 
     readonly uri= "http://localhost:6073/api/Users" ;
     
-    PostDetails(farmreg:User) {
+    PostDetails(farmreg:Userfarmer) {
         debugger;
         return this.http.post(this.uri,farmreg);
     }}

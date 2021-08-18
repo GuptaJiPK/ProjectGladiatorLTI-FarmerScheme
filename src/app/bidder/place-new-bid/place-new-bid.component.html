@@ -62,19 +62,22 @@
             <div class="col-md-6 mb-3">
         <div>
             <label>Bid Amount </label>
-            <input type="text" formControlName="bidamt" class="form-control ">
+            <input type="text" formControlName="bidAmount" class="form-control " min="0">
         </div>
         
-        <div *ngIf="!bidform.get('bidamt')?.valid && (bidform.get('bidamt')?.dirty || bidform.get('bidamt')?.touched)" class="error">
-            <div *ngIf="bidform.get('bidamt')?.errors?.required">
+        <div *ngIf="!bidform.get('bidAmount')?.valid && (bidform.get('bidAmount')?.dirty || bidform.get('bidAmount')?.touched)" class="error">
+            <div *ngIf="bidform.get('bidAmount')?.errors?.required">
             <small class="text-danger">Please Enter the Bid Amount.</small>
             </div>
+            <div *ngIf="bidform.get('bidAmount')?.errors?.pattern">
+                <small class="text-danger">Please Enter the Correct Bid Amount.</small>
+                </div>
         </div>
         </div>
         <br>
         <div >
         <div class="form-center">
-        <button class="btn btn-success" type="submit" [disabled]="!bidform.valid">Claim Request</button>
+        <button class="btn btn-success" type="submit" [disabled]="!bidform.valid">Place Bid</button>
         </div>
     </div></div> 
     </form>

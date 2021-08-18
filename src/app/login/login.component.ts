@@ -36,11 +36,7 @@ export class LoginComponent implements OnInit {
 
    
   ngOnInit(): void {
-    this.user=localStorage.getItem('userid');
-    if(this.user==null){
-
-    }
-    console.log(this.user);
+    
     
     }
 
@@ -64,17 +60,20 @@ export class LoginComponent implements OnInit {
         // console.log(userlogin);
         this.router.navigate(['farmer']);
         sessionStorage.setItem('user',this.LoginForm.value.email);
+        sessionStorage.setItem('logincheck',this.userlogin.roles);
       }
       else if(userlogin.roles == 'B'){
         //console.log(userlogin);
         this.router.navigate(['bidder']);
         sessionStorage.setItem('user',this.LoginForm.value.email);
+        sessionStorage.setItem('logincheck',this.userlogin.roles);
 
       }
       else if(userlogin.roles == 'A'){
         //console.log(userlogin);
         this.router.navigate(['admin']);
         sessionStorage.setItem('user',this.LoginForm.value.email);
+        sessionStorage.setItem('logincheck',this.userlogin.roles);
 
       }
       else{
@@ -87,5 +86,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.removeItem('user');
       this.router.navigate(['login']);
     }
+
+    
 
   }

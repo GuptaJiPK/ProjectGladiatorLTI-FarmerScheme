@@ -20,6 +20,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { UserReg } from "src/Models/Userreg";
+import { User } from "src/Models/User";
 
 
 

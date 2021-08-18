@@ -33,7 +33,7 @@ insertCrop(crop:Crop)
     return this.http.post(this.uri,crop);
     
 }
-//fetch the partcilar department details to edit
+//fetch the partcular department details to edit
 
 getcropbyid(id:any)
 {

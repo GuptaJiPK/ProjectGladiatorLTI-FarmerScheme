@@ -103,7 +103,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     BrowserModule,BrowserAnimationsModule,
     AppRoutingModule,ReactiveFormsModule,FormsModule,HttpClientModule,
     ToastrModule.forRoot({
-      positionClass :'toast-bottom-right'
+      positionClass :'toast-top-right'
     })
   ],
   providers: [UserService,InsuranceService,BidderCropService,ClaimService,CropService,ViewBidService,FarmerRegisterService,BidderRegisterService],

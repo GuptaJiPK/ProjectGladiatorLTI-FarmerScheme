@@ -1,53 +1,26 @@
-<!-- 
-<table class="table">
-    
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Type</th>
-            
-            <th>Sold Price</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let c of crops">
-        <tr>
-            <td>{{c.cropId}}</td>
-            <td>{{c.cropName}}</td>
-            <td>{{c.cropType}}</td>
-            <td>{{c.soldPrice}}</td>
-            
-            
-        </tr>
-  
-    </tbody>
-  </table> -->
+
 
   <table class="table">
     
     <thead>
         <tr>
-            <!-- <th>Id</th> -->
+            
             <th>Name</th>
             <th>Type</th>
             <th>Base MSP</th>
-            <th>Final Bid</th>
-            
             <th>Sold Price</th>
-  <!--           
-            <th>Fertilizer Type</th> -->
+             
+            
         </tr>
     </thead>
     <tbody *ngFor="let c of crops">
         <tr>
-            <!-- <td>{{c.cropid}}</td> -->
+            
             <td>{{c.cropname}}</td>
             <td>{{c.croptype}}</td>
             <td>{{c.baseMSp}}</td>
-            <td>{{c.bidstatus}}</td>
             <td>{{c.finalbidamount}}</td>
-<!--           
-          <td>{{c.MSP}}</td> -->
+
           
           
       </tr>

@@ -17,5 +17,10 @@ export class User{
             approvedBy?:string ;  
             roletype?:string;
             accountNo?:string;
-            ifscCode?:string;       
+            ifscCode?:string;   
+            landArea?:string;
+            landAddress?:string;
+            landPincode?:string;
+           
+
 }

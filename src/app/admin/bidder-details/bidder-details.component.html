@@ -40,9 +40,9 @@
                                
                                 <td>{{b.bidAmount}}</td>
                                 <td>{{b.dateOfBid}}</td>
-                                <td>{{b.bidStatus}}</td>
-                                <!-- <td *ngIf="b.bidStatus==='pending'"> <button class="btn btn-danger" (click)='statusUpdate(b.bId1)' >Pending</button></td>
-                                <td *ngIf="b.bidStatus==='approved'"> <button class="btn btn-success" disabled >Approved</button></td> -->
+                                <!-- <td>{{b.bidStatus}}</td> -->
+                                <td *ngIf="b.bidStatus==='pending'"> <button class="btn btn-danger" (click)='statusUpdate(b.bId1)' >Pending</button></td>
+                                <td *ngIf="b.bidStatus==='approved'"> <button class="btn btn-success" disabled >Approved</button></td>
                                 <td>
                                     <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(b.bId1)" ></i>
                                 

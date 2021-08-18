@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BidService } from 'src/Service/BidService';
 
@@ -10,21 +11,29 @@ import { BidService } from 'src/Service/BidService';
 })
 export class PlaceNewBidComponent implements OnInit {
   bidform:FormGroup;
-  constructor(private bidservice:BidService,private toastr:ToastrService) {
+  constructor(private bidservice:BidService,private toastr:ToastrService,private router:Router) {
     this.bidform=new FormGroup(
       {
         cropname:new FormControl(null,Validators.required),
         dateofbid:new FormControl(null,[Validators.required]),
-        bidamt:new FormControl(null,Validators.required)   
+        bidAmount:new FormControl('',[Validators.required,Validators.pattern("^[1-9]$")])   
       }
     )
    }
-
+useremail?:any;
   ngOnInit(): void {
+
+    this.useremail=sessionStorage.getItem('user');
+    if(sessionStorage.getItem('logincheck')!='B'){
+      this.router.navigate(['/login'])
+    }
+
     this.fetchcropbid();
     this.futureDateDisable();
     this.getDate();
-  }
+    
+  
+}
   insu:any;
   errmsg:any;
   message:any;
@@ -41,9 +50,11 @@ export class PlaceNewBidComponent implements OnInit {
   // /////////////////////
   addRequest(){
     debugger;
-    this.bidservice.PostRequest(this.bidform.value).subscribe((data)=>{console.table(data);this.message=data},
+    this.bidservice.PostRequest(this.bidform.value,this.useremail).subscribe((data)=>{console.table(data);this.message=data},
     (err)=>{this.errmsg=err.error.Message;
-      this.toastr.success('Submitted successfully', 'Bid Placed')
+      this.toastr.success('Submitted successfully', 'Bid Placed'),
+      
+      console.log(err)
     });
   }
 

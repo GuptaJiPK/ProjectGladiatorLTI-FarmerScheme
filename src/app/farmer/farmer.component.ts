@@ -43,20 +43,30 @@ export class FarmerComponent implements OnInit {
     }
   }
   email?:any;
-  
+  user?:any;
 
   ngOnInit() 
   {
     this.welcome();
+    // this.user=localStorage.getItem('user');
+    // if(this.user==null){
+    //   this.router.navigate(['login'])
+    // }
   }
-  logout(){
+  // logout(){
+  //   sessionStorage.removeItem('user');
+  //   this.tost.success("Succesfully Logout!!!")
+  //   this.router.navigate(['login']);
+    
+  // }
+  welcome(){
+    this.email=sessionStorage.getItem('user');
+  }
+  Logout(){
     sessionStorage.removeItem('user');
     this.tost.success("Succesfully Logout!!!")
     this.router.navigate(['login']);
     
-  }
-  welcome(){
-    this.email=sessionStorage.getItem('user');
   }
 
 

@@ -1,8 +1,8 @@
 form {
     /* margin-top: 100px; */
-    border: 3px solid #f1f1f1;
+    /* border: 3px solid #f1f1f1;
     border-radius: 0 50px;
-    overflow: hidden;
+    overflow: hidden; */
   }
   
   /* Full-width inputs */
@@ -72,3 +72,10 @@ form {
     }
     
   }
+
+  .submit{
+    margin: auto;
+    width: 25%;
+
+  }
+  

@@ -64,7 +64,7 @@ children:[
   {path:'insurance',component:InsuranceComponent}
 ]},
 
-  {path: 'bidhistory-component', component: BidhistoryComponent },  
+  {path: 'bidhistory', component: BidhistoryComponent },  
 
   //bidder module paths
  

@@ -6,5 +6,5 @@ export class Bidder{
         bidAmount?:Number;
         
         dateOfBid?:Number;
-        bidStatus?:Number;
+        bidStatus?:string;
 }

@@ -7,11 +7,13 @@ export class UserReg
     address2?:string;
     city?:string;
     state?:string
-    pincode?:string;
+    pincode?:any;
     aadharCard?:any;
     panCard?:any;
     certificate?:any;
     traderLicense?:any;
     password?:string;
     roletype?:string;
+    accountNo?:string;
+    ifscCode?:string; 
 }
