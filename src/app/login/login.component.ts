@@ -2,10 +2,11 @@
 // ----------------------------------------------------------------------------------------------
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators,FormsModule } from '@angular/forms';
+import { Login } from 'src/Models/login';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from 'src/Service/LoginService';
+import { FarmerComponent } from '../farmer/farmer.component';
 import { Router } from '@angular/router';
-import { User } from 'src/Models/User';
-import { userloginService } from 'src/Service/userloginService';
 
 
 
@@ -18,63 +19,74 @@ import { userloginService } from 'src/Service/userloginService';
 export class LoginComponent implements OnInit {
 
 
-  userlogin: FormGroup;
-  userid: any;
-  firstname: any;
-  lastname: any;
-
-  constructor(private ulservice: userloginService, private router: Router) {
-    this.userlogin = new FormGroup({
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    });
-  }
-
-  ngOnInit() {
-    //this.onSubmit();
-  }
-  array: any;
-  array1:any;
-  sessionfname: any;
-  sessionlname: any;
-  sessionzipcode: any;
-  sessionaddress: any;
-  sessionemail: any;
-  sessionuserid: any;
-  sessiongender: any;
-  sessionage:any;
-  login: User = {};
-  onSubmit() {
-    
-    //this.signupForm.get('user_name').value
-    this.ulservice.GetUser(this.userlogin.value).subscribe((data) => {
-      console.table(data);
-      
-      //this.array = data[0].user_id;
-      //console.log(this.array);
-      
-      if (data != null) {
-        this.sessionfname = localStorage.setItem('firstName', data[0].firstName);
-        this.sessionlname = localStorage.setItem('lastName', data[0].lastName);
-        this.sessionemail = localStorage.setItem('email', this.userlogin.value.email);
-        this.sessionuserid = localStorage.setItem('userId', data[0].userId);
-        this.sessionage = localStorage.setItem('password', data[0].password);
-        this.sessionaddress = localStorage.setItem('address1', data[0].address1);
-        this.sessiongender = localStorage.setItem('verificationStatus', data[0].verificationStatus);
-        this.sessionzipcode = localStorage.setItem('approvedBy', data[0].approvedBy);
-        alert('Login Successful');
-       
-        console.log(this.sessionuserid);
-       
-        this.router.navigate(['farmer']);
+  user:any;
+  LoginForm:FormGroup;
+  err:any;
+  email?:string;
+  password?:string;
+  userlogin?:any;
+  constructor(public loginservice:LoginService,private router:Router) {
+    this.LoginForm=new FormGroup(
+      {
+      email:new FormControl(null,[(Validators.required),(Validators.email)]),
+      password:new FormControl(null,Validators.required),
       }
+    )
+   }
+
+   
+  ngOnInit(): void {
+    
+    
     }
-    );
-    console.log(this.sessionemail);
 
+    onLogin(){
+      debugger;
+      this.email = this.LoginForm.get('email')?.value;
+      this.password = this.LoginForm.get('password')?.value;
+      this.loginservice.GetLoginDetails(this.email,this.password).subscribe(
+        (data)=>
+          {
+            this.userlogin=data;
+            this.routeFunction(this.userlogin); 
+          }
+        
+      )
+    }
 
+    routeFunction(userlogin:any){
+      debugger;
+      if(userlogin.roles == 'F'){
+        // console.log(userlogin);
+        this.router.navigate(['farmer']);
+        sessionStorage.setItem('user',this.LoginForm.value.email);
+        sessionStorage.setItem('logincheck',this.userlogin.roles);
+      }
+      else if(userlogin.roles == 'B'){
+        //console.log(userlogin);
+        this.router.navigate(['bidder']);
+        sessionStorage.setItem('user',this.LoginForm.value.email);
+        sessionStorage.setItem('logincheck',this.userlogin.roles);
+
+      }
+      else if(userlogin.roles == 'A'){
+        //console.log(userlogin);
+        this.router.navigate(['admin']);
+        sessionStorage.setItem('user',this.LoginForm.value.email);
+        sessionStorage.setItem('logincheck',this.userlogin.roles);
+
+      }
+      else{
+        this.err="  Invalid Email Address or Password!!"
+      }
+      
+    }
+
+    logout(){
+      sessionStorage.removeItem('user');
+      this.router.navigate(['login']);
+    }
+
+    
 
   }
-
-}
-

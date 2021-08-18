@@ -7,20 +7,20 @@
     
     <thead>
         <tr>
-            <th>Id</th>
+            
             <th>Name</th>
             <th>Type</th>
             <th>Bid Amount</th>
-            <th>Bid Status</th>
+            
         </tr>
     </thead>
     <tbody *ngFor="let c of cropsbids">
         <tr>
-            <td>{{c.cropid}}</td>
+            
             <td>{{c.cropname}}</td>
             <td>{{c.croptype}}</td>
             <td>{{c.currentBid}}</td>
-            <td>{{c.bidstatus}}</td>
+            
             
             
         </tr>
@@ -29,6 +29,11 @@
   </table>
       
 </div>
+<div class="row">
+    <button class="btn btn-dark" routerLink='/farmer/market' style="margin: auto;width: 25%;">Back</button>
+
+</div>
+
   <br>
   <br>
   <br>

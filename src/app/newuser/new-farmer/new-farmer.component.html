@@ -1,0 +1,369 @@
+<!-- <p>new-farmer works!</p>
+<div class="container" id="context" style="padding: 100px;">
+    
+
+    <div class="container align-center py-3 border">
+           
+   
+       <form [formGroup]="registrationForm">
+           <h4 style="text-align:center;">Personal Details</h4>
+             <div>
+               <p>
+                   <label>FullName</label>
+                    <input type="text" formControlName="fullname">
+                </p>
+                <div *ngIf="!registrationForm.get('fullname')?.valid && registrationForm.get('fullname')?.touched" 
+                class="text-danger"> Full Name is required</div>
+                <p>
+                 <label>Contact No</label>
+                 <input type="number" formControlName="Contact">
+             </p>
+             <div *ngIf="!registrationForm.get('Contact')?.valid && registrationForm.get('Contact')?.touched" 
+             class="text-danger"> Contact is required</div>
+             
+                <p>
+                    <label>E-mail Id</label>
+                    <input type="text" formControlName="mailid">
+                </p>
+                <div *ngIf="!registrationForm.get('mailid')?.valid && (registrationForm.get('mailid')?.dirty || registrationForm.get('mailid')?.touched)"
+       class = "error">
+   
+           <div *ngIf="registrationForm.get('mailid')?.errors?.required">
+           <small class="text-danger">Email is required </small>
+           </div>
+   
+           <div *ngIf="registrationForm.get('mailid')?.errors?.email">
+           <small class="text-danger">Invalid email address</small>
+           </div>
+   `   </div>
+             </div>  
+             <div>
+                 <h4 style="text-align:center;">Address Details</h4>
+                 <p>
+                   <label>Address 1</label>
+                   <textarea rows="4" cols="50" formControlName="Address1" placeholder="Please Enter your primary Address"></textarea>
+   
+                 </p>
+                 <div *ngIf="!registrationForm.get('Address1')?.valid && registrationForm.get('Address1')?.touched" 
+                class="text-danger"> Address1 is required</div>
+                 <p>
+                   <label>Address 2</label>
+                   <textarea rows="4" cols="50" formControlName="Address2" placeholder="Please Enter your secondary Address"></textarea>
+   
+                 </p>
+                 <div *ngIf="!registrationForm.get('Address2')?.valid && registrationForm.get('Address2')?.touched" 
+                class="text-danger"> Address2 is required</div>
+             </div>
+             <div>
+               <p>
+                   <label>City</label>
+                    <input type="text" formControlName="city">
+                </p>
+                <div *ngIf="!registrationForm.get('city')?.valid && registrationForm.get('city')?.touched" 
+                class="text-danger"> City is required</div>
+                <p>
+                    <label>State</label>
+                    <input type="text" formControlName="state">
+                </p>
+                <div *ngIf="!registrationForm.get('state')?.valid && registrationForm.get('state')?.touched" 
+                class="text-danger"> State is required</div>
+                <p>
+                    <label>Pin Code</label>
+                    <input type="number" formControlName="pin">
+                </p>
+                <div *ngIf="!registrationForm.get('pin')?.valid && registrationForm.get('pin')?.touched" 
+                class="text-danger"> Pin Code is required</div>
+             </div> 
+   
+             <div>
+                 <h4 style="text-align:center;">Bank Details</h4>
+                 <p>
+                   <label>Account No</label>
+                    <input type="text" formControlName="acc">
+                </p>
+                <div *ngIf="!registrationForm.get('acc')?.valid && registrationForm.get('acc')?.touched" 
+                class="text-danger">Account No is required</div>
+                <p>
+                    <label>IFSC COde</label>
+                    <input type="text" formControlName="ifsc">
+                </p>
+                <div *ngIf="!registrationForm.get('ifsc')?.valid && registrationForm.get('ifsc')?.touched" 
+                class="text-danger"> IFSC is required</div>
+   
+             </div>
+             <div>
+               <h4 style="text-align:center;">Documents Upload</h4>
+             <p>
+                 <label>Aadhar</label>
+                  <input type="file" formControlName="aadhar">
+              </p>
+              <p>
+                  <label>PanCard</label>
+                  <input type="file" formControlName="pan">
+              </p>
+              <p>
+                  <label>Traders License</label>
+                  <input type="file" formControlName="trade">
+              </p>
+   
+           </div>
+   
+           <div>
+               <p>
+                   <label>Password</label>
+                   <input type="password" formControlName="pwd">
+               </p>
+               <div *ngIf="!registrationForm.get('pwd')?.valid && registrationForm.get('pwd')?.touched"class="alert alert-danger">
+   
+               <div *ngIf="registrationForm.get('pwd')?.errors?.required">
+               Password is required
+               </div>
+   
+               <div *ngIf="registrationForm.get('pwd')?.errors?.pattern"> 
+                   Password should contain one uppercase letter, one lowercase letter and one number 
+                   <br>Password should be 8 to 12 characters in length
+               </div>
+   
+           </div>
+   
+               <p>
+                   <label>Confirm Password</label>
+                   <input type="password" formControlName="confirmpassword">
+               </p>
+   
+           </div>
+               <div *ngIf="!registrationForm.get('confirmpassword')?.valid && registrationForm.get('confirmpassword')?.touched" class="alert alert-danger">
+   
+               <div *ngIf="registrationForm.get('confirmpassword')?.errors?.required">
+                   Confirm Password is required
+               </div>
+   
+               <div *ngIf="registrationForm.get('confirmpassword')?.errors?.pattern"> 
+                       Password should contain one uppercase letter, one lowercase letter and one number 
+                       <br>Password should be 8 to 12 characters in length
+               </div>
+           </div>
+           
+           
+           <button class="btn btn-success" type="submit">Register</button>
+           <button class="btn btn-success" type="button">Reset</button>
+           
+             
+           </form>
+           
+   </div>
+            
+   </div> -->
+
+
+   <!-- //////////////////////////////////////////////////////////////////// -->
+
+   <p>new-bidder works!</p>
+<div class="container" id="context">
+   
+
+ <div class="container align-center py-3 border">
+        
+
+    <form [formGroup]="registrationForm" (ngSubmit)="addRequest()">
+        <h4 style="text-align:center;">Personal Details</h4>
+        <div>
+          <p>
+            <label>RoleType</label>
+             <input type="text" formControlName="roletype" value="farmer" readonly="readonly">
+         </p>
+        </div>
+          <div>
+            <p>
+                <label>FirstName</label>
+                 <input type="text" formControlName="firstname">
+             </p>
+             <div *ngIf="!registrationForm.get('firstname')?.valid && registrationForm.get('firstname')?.touched" 
+             class="alert alert-danger"> First Name is required</div>
+             <p>
+              <label>LastName</label>
+               <input type="text" formControlName="lastname">
+           </p>
+           <div *ngIf="!registrationForm.get('lastname')?.valid && registrationForm.get('lastname')?.touched" 
+           class="alert alert-danger"> LastName is required</div>
+            
+             <p>
+                 <label>E-mail Id</label>
+                 <input type="text" formControlName="email">
+             </p>
+             <div *ngIf="!registrationForm.get('email')?.valid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)"
+    class = "alert alert-danger">
+
+        <div *ngIf="!registrationForm.get('email')?.errors?.required">
+        <small class="text-danger">Email is required </small>
+        </div>
+
+        <div *ngIf="!registrationForm.get('email')?.errors?.email">
+        <small class="text-danger">Invalid email address</small>
+        </div>
+`   </div>
+          </div>  
+          <div>
+              <h4 style="text-align:center;">AddressDetails</h4>
+              <p>
+                <label>Address1</label>
+                <textarea rows="4" cols="50" formControlName="address1">Please Enter your primary Address</textarea></p>
+                <div *ngIf="!registrationForm.get('address1')?.valid && registrationForm.get('address1')?.touched" 
+           class="alert alert-danger"> Address is required</div>
+              <p>
+                <label>Address2</label>
+                <textarea rows="4" cols="50" formControlName="address2">Please enter your secondary address</textarea></p>
+                <div *ngIf="!registrationForm.get('address2')?.valid && registrationForm.get('address2')?.touched" 
+           class="alert alert-danger"> Address is required</div>
+              
+          </div>
+          <div>
+            <p>
+                <label>City</label>
+                 <input type="text" formControlName="city">
+             </p>
+             <div *ngIf="!registrationForm.get('city')?.valid && registrationForm.get('city')?.touched" 
+             class="alert alert-danger"> City is required</div>
+             
+             <div class="custom_select">
+              <label for="State"><b>State</b></label>
+              <select style="max-width:50%;margin-left: 170px; width:30%; height:25px;" placeholder="Enter State"  formControlName="state"> 
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+              </select>
+          </div>
+             <div *ngIf="!registrationForm.get('state')?.valid && registrationForm.get('state')?.touched" 
+             class="alert alert-danger"> state is required</div>
+             
+             <div class="inputfeild">
+                 <label>Pin Code</label>
+                 <input type="number" formControlName="pincode">
+             </div>
+             <div class="alert alert-danger" *ngIf="!registrationForm.get('pincode')?.valid && registrationForm.get('pincode')?.touched" >
+              <div [hidden]="!registrationForm.get('pincode')?.errors?.required">pincode is required</div>
+              <div [hidden]="!registrationForm.get('pincode')?.errors?.pattern">Enter valid pincode</div>
+             </div> 
+        </div>
+          <div>
+              <h4 style="text-align:center;">Bank Details</h4>
+                <div class="inputfeild">
+                    <label>Account No</label>
+                    <input type="text" formControlName="accountNo">
+                </div>
+                <div class="alert alert-danger" *ngIf="!registrationForm.get('accountNo')?.valid && registrationForm.get('accountNo')?.touched">
+                  <div [hidden]="!registrationForm.get('accountNo')?.errors?.required">Account No is required</div>
+                  <div [hidden]="!registrationForm.get('accountNo')?.errors?.pattern">Enter valid Account No</div>
+                </div> 
+                  <div class="inputfeild">
+                      <label>IFSC Code</label>
+                      <input type="text" formControlName="ifscCode">
+                  </div>
+                  <div *ngIf="!registrationForm.get('ifscCode')?.valid && registrationForm.get('ifscCode')?.touched" 
+                  class="alert alert-danger">
+                  <div [hidden]="!registrationForm.get('ifscCode')?.errors?.required">IFSC Code is required</div>
+                  <div [hidden]="!registrationForm.get('ifscCode')?.errors?.pattern">Enter valid IFSC code</div>
+                </div>
+
+          </div>
+          <div>
+            <h4 style="text-align:center;">Documents Upload</h4>
+          <p>
+              <label>Aadhar</label>
+               <input type="file" formControlName="aadharCard">
+           </p>
+           <p>
+               <label>PanCard</label>
+               <input type="file" formControlName="panCard">
+           </p>
+           <p>
+            <label>Certificate</label>
+            <input type="file" formControlName="certificate">
+        </p>
+
+           <!-- <p>
+               <label>Traders License</label>
+               <input type="file" formControlName="traderLicense">
+           </p> -->
+
+        </div>
+
+        <div>
+            <div class="inputfeild">
+                <label>Password</label>
+                <input type="password" formControlName="password">
+            </div>
+            <div *ngIf="!registrationForm.get('password')?.valid && registrationForm.get('password')?.touched"class="alert alert-danger">
+
+            <div *ngIf="registrationForm.get('password')?.errors?.required">
+            Password is required
+            </div>
+
+            <div *ngIf="registrationForm.get('password')?.errors?.pattern"> 
+                Password should contain one uppercase letter, one lowercase letter and one number 
+                <br>Password should be 8 to 12 characters in length
+            </div>
+
+        </div>
+
+            <p>
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmpassword">
+            </p>
+
+        </div>
+            <div *ngIf="!registrationForm.get('confirmpassword')?.valid && registrationForm.get('confirmpassword')?.touched" class="alert alert-danger">
+
+            <div *ngIf="registrationForm.get('confirmpassword')?.errors?.required">
+                Confirm Password is required
+            </div>
+
+            <div *ngIf="registrationForm.get('confirmpassword')?.errors?.pattern"> 
+                    Password should contain one uppercase letter, one lowercase letter and one number 
+                    <br>Password should be 8 to 12 characters in length
+            </div>
+        </div>
+        
+        
+        <button class="btn btn-success" type="submit">Register</button>
+        <button class="btn btn-success" type="button">Reset</button>
+        
+          
+        </form>
+        
+</div>
+         
+</div>

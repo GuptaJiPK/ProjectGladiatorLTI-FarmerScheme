@@ -1,3 +1,4 @@
+<!-- <button class="btn-dark"routerLink='/login'>Logout</button> -->
 <div class="container">
     <div >
        
@@ -11,6 +12,7 @@
                     <i class="fa fa-user-circle-o px-2" aria-hidden="true" style="font-size: 50px;"></i> &nbsp;&nbsp;
                      <h5 class="py-3" style="float: right;">Welcome, Admin!</h5>
                 </a>
+                <a routerLink='welcome'></a>
                 <a  routerLink='user-details' class="list-group-item list-group-item-action">Users Details</a>
                 <a  routerLink='crop-details' class="list-group-item list-group-item-action">Crops Sale Requests</a>
                 <a  routerLink='bid-details' class="list-group-item list-group-item-action">Bidding Requests</a>
@@ -19,14 +21,12 @@
               </div>
         </div>
         <div class="col-md-9">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarcollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse  rounded p-2 text-center"style="background-color:#90c43e;" id="navbarcollapse">
+            
+                <div class="  rounded p-2 text-center"style="background-color:#90c43e;" id="navbarcollapse">
                     <h2>Admin Dashboard</h2>
+                    <button class="btn btn-danger logout" (click)='Logout()' >Logout</button>
                 </div>
-            </nav>
+            
               <!-- router outlet of child components -->
                 
                 <router-outlet></router-outlet>

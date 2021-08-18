@@ -33,6 +33,12 @@ export class ClaimService{
         return this.http.delete(`${this.uri}/${id}`);
     }
 
+    ChangeStatus(id:number){
+      debugger;
+      return this.http.post( `${this.uri}/approved?claimId=${id}`,null,{responseType:'text'});
+  }
+   
+
 
 
 }

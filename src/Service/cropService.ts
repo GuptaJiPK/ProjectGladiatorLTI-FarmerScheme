@@ -17,6 +17,7 @@ export class CropService{
     }
 
     refreshlist(){
+        debugger;
         this.http.get(this.uri)
         .toPromise()
         .then(res=>this.croplist=res as Crop[]);
@@ -29,6 +30,9 @@ export class CropService{
 
     deleteCropDetails(id:number){
         return this.http.delete(`${this.uri}/${id}`);
+    }
+    ChangeStatus(id:number){
+        return this.http.post( `${this.uri}/approved?cropId=${id}`,null,{responseType:'text'});
     }
 
 

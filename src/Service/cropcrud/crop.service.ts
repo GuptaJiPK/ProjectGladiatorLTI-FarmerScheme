@@ -9,8 +9,8 @@ export class CropService {
 
   constructor(private http:HttpClient) { }
 
-  readonly uri= "//localhost:6073/api/CropForSalesVer3";
-  readonly uri2= "//localhost:6073/api/SoldHistory?FarmerId=4";
+  readonly uri= "http://localhost:6073/api/CropForSales";
+  readonly uri2= "http://localhost:6073/api/SoldHistory?FarmerId=4";
 
   getcrop(){
     return this.http.get(this.uri);
@@ -33,7 +33,7 @@ insertCrop(crop:Crop)
     return this.http.post(this.uri,crop);
     
 }
-//fetch the partcilar department details to edit
+//fetch the partcular department details to edit
 
 getcropbyid(id:any)
 {

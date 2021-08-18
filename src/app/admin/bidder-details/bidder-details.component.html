@@ -17,9 +17,9 @@
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body" style="overflow: auto;">
                     <table class="table table-primary">
-                        <thead class="thead-light">
+                        <thead class="table-dark">
                             <tr>
-                                <th scope="col">Bidder Id</th>
+                                <th >Bidder Id</th>
                                 
                                 <th>Crop Id</th>
                                 <th>User Id</th>
@@ -40,13 +40,12 @@
                                
                                 <td>{{b.bidAmount}}</td>
                                 <td>{{b.dateOfBid}}</td>
-                                <td>{{b.bidStatus}}</td>
-                                <!-- <td><p class="box-title" style="margin-top:2px; margin-left:5px;" id="editable">{{b.approvalStatus}}</p></td>
-                                <input type="text"  id="inputgroupname" style="display:none;"> -->
+                                <!-- <td>{{b.bidStatus}}</td> -->
+                                <td *ngIf="b.bidStatus==='pending'"> <button class="btn btn-danger" (click)='statusUpdate(b.bId1)' >Pending</button></td>
+                                <td *ngIf="b.bidStatus==='approved'"> <button class="btn btn-success" disabled >Approved</button></td>
                                 <td>
                                     <i class="fa fa-trash text-danger btn" aria-hidden="true" (click)="onDelete(b.bId1)" ></i>
-                                </td>
-                                <td>
+                                
                                     <i class="fa fa-pencil text-info btn" aria-hidden="true" (click)="populateForm(b)"></i>
                                 </td>
                             </tr>

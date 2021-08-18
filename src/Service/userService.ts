@@ -1,6 +1,7 @@
 import{Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/Models/User';
+import { UserDetailsComponent } from 'src/app/admin/user-details/user-details.component';
 
 @Injectable({providedIn:"root"})
 
@@ -36,11 +37,14 @@ export class UserService{
         debugger;
         return this.http.delete(`${this.uri}/${id}`);
     }
+    ChangeStatus(id:number){
+        return this.http.post( `${this.uri}/approved?userId=${id}`,null,{responseType:'text'});
+    }
 
     
 
 
     
-
     
-}
+    
+    }

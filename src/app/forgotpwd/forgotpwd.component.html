@@ -43,9 +43,9 @@
 
 </div> -->
 
+<!-- //////////////////////////////////////////////////////////////////////// -->
 
-
-<div class="container-fluid loginback" style="background-image: url(assets/images/login/background/loginback.jpg)">
+<!-- <div class="container-fluid loginback" style="background-image: url(assets/images/login/background/loginback.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -76,7 +76,7 @@
                               <br><br>
                               <a routerLink='/login' class="btn btn-danger text-center verify">Cancel</a>
                           
-                              <!-- <button type="submit">Send verification link</button> -->
+                               <button type="submit">Send verification link</button>
                               
                             </div>
                           
@@ -95,4 +95,53 @@
 
     </div>
 
-</div>
+</div> -->
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+  <div class="container-fluid" style="height: 450px;">
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+          <form [formGroup]="forgotpasswordform" (ngSubmit)="SendPassword()"style="background-image: url(assets/images/login/background/loginback.jpg)">
+      
+            <div class="form-group">
+              <label>E-mail Id</label>
+              <input class="form-control" type="text" formControlName="email">
+            
+              <div *ngIf="!forgotpasswordform.get('email')?.valid && (forgotpasswordform.get('email')?.dirty || forgotpasswordform.get('email')?.touched)"
+                    class = "alert alert-danger">
+          
+                <div *ngIf="!forgotpasswordform.get('email')?.errors?.required">
+                <small class="text-danger">Email is required </small>
+                </div>
+          
+                <div *ngIf="!forgotpasswordform.get('email')?.errors?.email">
+                <small class="text-danger">Invalid email address</small>
+                </div>
+              </div>
+            </div>
+              <button class="btn btn-success submit" type="submit">RequestPassword</button>
+          
+          </form>
+  
+        </div>
+        <div class="col-md-3">
+  
+        </div>
+
+      </div>
+      
+      
+
+    </div>
+
+  </div>
+    
+    
+    

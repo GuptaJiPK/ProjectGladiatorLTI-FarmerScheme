@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Bidder } from 'src/Models/Bidder';
 import { BidderService } from 'src/Service/bidderService';
 
@@ -11,10 +12,11 @@ import { BidderService } from 'src/Service/bidderService';
 })
 export class BidderDetailsComponent implements OnInit {
 
-  constructor(public service:BidderService) { }
+  constructor(public service:BidderService,private router:Router) { }
 
   ngOnInit(): void {
     this.service.refreshlist();
+   
   }
 //adding the record into the table
   addRecord(form:NgForm){
@@ -61,6 +63,18 @@ export class BidderDetailsComponent implements OnInit {
         this.service.refreshlist();
       },
       err=>{console.log(err)}
+      )
+    }
+
+    statusUpdate(id:any){
+      debugger;
+      this.service.ChangeStatus(id).subscribe(
+        res=>{
+          this.service.refreshlist();
+          console.log(res);
+          if(res=="Status Approved")
+          alert("Status Approved")
+        }
       )
     }
 

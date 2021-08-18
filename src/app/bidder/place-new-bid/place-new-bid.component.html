@@ -1,0 +1,85 @@
+
+
+
+<div class="card-body">
+    <h3>Bidding Status</h3>
+    
+    <table class="table table-secondary">
+    <thead class="table-dark">
+        <tr>
+            <!-- <th>CropId</th> -->
+            <th>CropName</th>
+            <th>CropType</th>
+            <th>BasePrice</th>
+            <th>CurrentBid</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of Cropbids">
+        <tr >
+         <!-- <td>{{item.cropid}}</td> -->
+         <td>{{item.cropname}}</td>
+         <td>{{item.croptype}}</td>
+         <td>{{item.baseMSp}}</td>
+         <td>{{item.currentBid}}</td>
+         
+        </tr>
+    </tbody>
+    </table>
+    <br>
+    <br>
+    <!-- ////////////////////// -->
+
+    <h3>Bid Request</h3>
+    <br>
+<div class="container">
+    <form [formGroup]="bidform" (ngSubmit)="addRequest()"> 
+        <div class="row ">
+            <div class="col-md-6 mb-3 ">    
+        <div>
+             <label>Crop Name</label>
+            <input type="text" formControlName="cropname" class="form-control ">
+        </div>
+        
+        <div *ngIf="!bidform.get('cropname')?.valid && (bidform.get('cropname')?.dirty || bidform.get('cropname')?.touched)" class="error">
+            <div *ngIf="bidform.get('cropname')?.errors?.required">
+            <small class="text-danger">Please Enter the Crop Name.</small>
+            </div>
+        </div>
+        </div><br>
+        <div class="col-md-6 mb-3">
+        <div>
+            <label>Date of Bid </label>
+            <input type="date" formControlName="dateofbid" class="form-control" max="{{maxDate}}" min="{{minDate}}">
+        </div>
+        <div *ngIf="!bidform.get('dateofbid')?.valid && (bidform.get('dateofbid')?.dirty || bidform.get('dateofbid')?.touched)" class="error">
+            <div *ngIf="bidform.get('dateofbid')?.errors?.required">
+                <small class="text-danger">Please Enter the Date of bid.</small>
+            </div>
+        </div>
+        </div></div>
+    
+        <div class="row">
+            <div class="col-md-6 mb-3">
+        <div>
+            <label>Bid Amount </label>
+            <input type="text" formControlName="bidAmount" class="form-control " min="0">
+        </div>
+        
+        <div *ngIf="!bidform.get('bidAmount')?.valid && (bidform.get('bidAmount')?.dirty || bidform.get('bidAmount')?.touched)" class="error">
+            <div *ngIf="bidform.get('bidAmount')?.errors?.required">
+            <small class="text-danger">Please Enter the Bid Amount.</small>
+            </div>
+            <div *ngIf="bidform.get('bidAmount')?.errors?.pattern">
+                <small class="text-danger">Please Enter the Correct Bid Amount.</small>
+                </div>
+        </div>
+        </div>
+        <br>
+        <div >
+        <div class="form-center">
+        <button class="btn btn-success" type="submit" [disabled]="!bidform.valid">Place Bid</button>
+        </div>
+    </div></div> 
+    </form>
+    
+    </div>

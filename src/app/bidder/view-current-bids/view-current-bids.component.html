@@ -1,0 +1,30 @@
+<br><br>
+<div class="container-fluid">
+    <div class="container">
+        <h3 class="text-center">Finished Bids</h3><br>
+        <table class="table table-secondary">
+            <thead class="table-dark">
+                <tr>
+                    <!--<th>bidId</th>-->
+                    <th>UserID</th>
+                    <th>CropId</th>
+                    <th>MSP</th>
+                    <th>FinalBid</th>
+        
+                </tr>
+            </thead>
+            <tbody *ngFor="let b of bidding">
+                <tr>
+                 <!--<td>{{b.bId}}</td>-->
+                 <td>{{b.userId}}</td>
+                 <td>{{b.cropId}}</td>
+                 <td>{{b.basePriceAsMsp}}</td>
+                 <td>{{b.finalBidAmount}}</td>
+                </tr>
+            </tbody>
+            </table>
+        
+
+    </div>
+</div>
+

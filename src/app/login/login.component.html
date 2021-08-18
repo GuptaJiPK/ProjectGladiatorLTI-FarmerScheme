@@ -1,12 +1,14 @@
-<p>login works!</p>
+
 <div class="container-fluid loginback" style="background-image: url(assets/images/login/background/loginback.jpg)" >
     <div class="container">
+      
         <div class="row">
+          
             <div class="col-md-3">
 
             </div>
             <div class="col-md-6">
-                <form [formGroup]="userlogin" method="post">
+                <!-- <form [formGroup]="userlogin" method="post">
     
   
                     <div class="container">
@@ -37,7 +39,7 @@
 
                       <br><br>
                       <div class="form-group">
-                        <button type="submit" (click)="onSubmit()" class="btn btn-outline-primary" [disabled]="!userlogin.valid">
+                        <button type="submit" (click)="onLogin()" class="btn btn-primary" [disabled]="!userlogin.valid">
                           <a routeLink="/admin">Login</a> </button>
                       </div>
                   
@@ -45,18 +47,55 @@
                       <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                       </label>
-                    </div>
+                    </div> -->
+
+                    <!-- /////////////////////////////////////// -->
+                    <div class="card" style="background: transparent;">
+                      <form [formGroup]="LoginForm" >
+                          <div class="mb-2">
+                              <label for="email">Enter Email</label>
+                              <input class="form-control" type="text" formControlName="email" email required>
+                          </div>
+                          <div *ngIf="!LoginForm.get('email')?.valid && (LoginForm.get('email')?.dirty || LoginForm.get('email')?.touched)" class="error">
+                              <div *ngIf="LoginForm.get('email')?.errors?.required">
+                                  <small class="text-danger">email is required</small>
+                              </div>
+                              <div *ngIf="LoginForm.get('email')?.errors?.email">
+                                  <small class="text-danger">Incorrect email pattern</small>
+                              </div>
+                          </div>
+                      
+                      
+                      
+                          <label>Password :</label>
+                              <input type="password" formControlName="password" class="form-control ">
+                         
+                          <div *ngIf="!LoginForm.get('password')?.valid && (LoginForm.get('password')?.dirty || LoginForm.get('password')?.touched)" class="error">
+                              <div *ngIf="LoginForm.get('password')?.errors?.required">
+                                  <small class="text-danger">Please Enter password.</small>
+                              </div>
+                          </div>
+                          </form>
+                          {{err}}
+                          <br>
+                          
+                              <button class="btn btn-primary login"  [disabled]="!LoginForm.valid" (click)="onLogin()">Submit</button>
+                         
+                      </div>
+                          <!-- <h3>{{email}}</h3> -->
+                    <!-- //////////////////////////////////////// -->
                   
                     <div class="container" style="background-color:#f1f1f1;overflow: hidden;">
                       
                        
                        <a routerLink='/forgotpwd'>Forgot Password?</a>
                     <br>
-                    New User?<a routerLink='/newuser'>Register Here!</a>
+                    New User?<a routerLink='/newuser'>Register Here!</a><br>
+                    <button class="btn-dark"routerLink='/home'>Back</button>
                     
                      
                     </div>
-                  </form>
+                  <!-- </form> -->
 
             </div>
             <div class="col-md-3">

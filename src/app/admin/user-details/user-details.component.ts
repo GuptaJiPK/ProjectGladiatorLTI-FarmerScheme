@@ -19,7 +19,7 @@ export class UserDetailsComponent implements OnInit {
 
   //adding the record into the table
   addRecord(form:NgForm){
-    //debugger;
+    debugger;
     this.service.postUserDetails().subscribe(
       res=>{
         //to clear the fields in the form
@@ -62,6 +62,17 @@ export class UserDetailsComponent implements OnInit {
         this.service.refreshlist();
       },
       err=>{console.log(err)}
+      )
+    }
+
+    statusUpdate(id:any){
+      this.service.ChangeStatus(id).subscribe(
+        res=>{
+          this.service.refreshlist();
+          console.log(res);
+          if(res=="Status Approved")
+          alert("Status Approved")
+        }
       )
     }
 

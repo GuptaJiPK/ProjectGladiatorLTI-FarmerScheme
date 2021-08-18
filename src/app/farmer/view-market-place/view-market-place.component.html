@@ -1,0 +1,26 @@
+
+   <table class="table">
+    
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Sold Price</th>
+            <th>Bid History</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let c of crops">
+        <tr>
+            <td>{{c.cropname}}</td>
+            <td>{{c.croptype}}</td>
+            <td>{{c.finalbidamount}}</td>
+            <!-- <td><a routerLink="/bidhistory-component"><button class="btn-success">Bid History</button></a></td> -->
+            <td><button class="btn-success" (click)="bidhistory(c.cropid)" >Bid History</button></td>
+
+            
+            
+   
+</tr>
+  
+    </tbody>
+  </table>
